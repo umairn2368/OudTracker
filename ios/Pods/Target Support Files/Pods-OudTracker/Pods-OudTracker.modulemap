@@ -1,0 +1,6 @@
+module Pods_OudTracker {
+  umbrella header "Pods-OudTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

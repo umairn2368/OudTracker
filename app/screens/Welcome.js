@@ -7,47 +7,57 @@ import {
   Image,
   Text,
   SafeAreaView,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 const Welcome = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <View style={{marginTop: 97}}>
-          <Text style={{fontWeight: '500', fontSize: 24}}>
-            Welcome to the mention
-          </Text>
-        </View>
-        <View style={{marginTop: 52}}>
-          <Image
-            style={{height: 232, width: 331}}
-            source={require('../assets/images/welcomeImage.png')}
-          />
-        </View>
-        <View style={{marginLeft: 53, marginRight: 41}}>
-          <Text
-            style={{
-              fontWeight: '500',
-              fontSize: 18,
-              justifyContent: 'center',
-              textAlign: 'center',
-            }}>
-            Let's get know to each other so we can setup your account
-          </Text>
-        </View>
-
-        <TouchableHighlight
-        onPress={()=>
-            navigation.navigate('InformationFirst')}
+    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+      <View
+        style={{
+          flex: 0.5,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+        }}>
+        <Image source={require('../Assets/images/logo.png')} />
+      </View>
+      <View style={{flex: 0.5, alignItems: 'center'}}>
+        <Text
           style={{
-            marginTop: 47,
-            marginLeft: 61,
-            marginRight: 60,
-            height: 53,
-            width: 229,
-            backgroundColor: '#25414C',
+            fontWeight: '500',
+            fontSize: 18,
+            justifyContent: 'center',
+            textAlign: 'center',
+            paddingTop: 37,
+          }}>
+          Welcome
+        </Text>
+        <Text
+          style={{
+            fontWeight: '500',
+            fontSize: 18,
+            justifyContent: 'center',
+            textAlign: 'center',
+            paddingTop: 37,
+          }}>
+          {`Welcome to Qoud \n we Fragrance your Image`}
+        </Text>
+      </View>
+
+      <View
+        style={{
+          flex: 0.5,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <TouchableHighlight
+          underlayColor=""
+          onPress={() => navigation.navigate('Login')}
+          style={{
+            height: 43,
+            width: 318,
+            backgroundColor: '#32BEA6',
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -58,7 +68,30 @@ const Welcome = ({navigation}) => {
               fontSize: 18,
               color: 'white',
             }}>
-            Create Account
+            Log In
+          </Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor=""
+          onPress={() => navigation.navigate('Register')}
+          style={{
+            height: 43,
+            width: 318,
+            backgroundColor: '#FFFFFF',
+            borderRadius: 5,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: 17,
+            borderWidth: 1,
+            borderColor: '#E5E5E5',
+          }}>
+          <Text
+            style={{
+              fontWeight: '500',
+              fontSize: 18,
+              color: 'black',
+            }}>
+            Register
           </Text>
         </TouchableHighlight>
       </View>

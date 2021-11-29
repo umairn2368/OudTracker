@@ -6,60 +6,76 @@ import {
   View,
   Image,
   Text,
+  TouchableHighlight,
   SafeAreaView,
 } from 'react-native';
-const {width, height} = Dimensions.get('window');
 
 const DashBoard = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, alignItems: 'center'}}>
-        <View style={{marginTop: 97}}>
-          <Text style={{fontWeight: '500', fontSize: 24}}>
-            Welcome to DashBoard
-          </Text>
-        </View>
-        <View style={{marginTop: 52}}>
-          <Image
-            style={{height: 232, width: 331}}
-            source={require('../assets/images/welcomeImage.png')}
-          />
-        </View>
-        <View style={{marginLeft: 53, marginRight: 41}}>
-          <Text
-            style={{
-              fontWeight: '500',
-              fontSize: 18,
-              justifyContent: 'center',
-              textAlign: 'center',
-            }}>
-            Let's get know to each other so we can setup your account
-          </Text>
-        </View>
-
+      <View style={{flex: 1}}>
         <View
           style={{
-            marginTop: 47,
-            marginLeft: 61,
-            marginRight: 60,
-            height: 53,
-            width: 229,
-            backgroundColor: '#25414C',
+            marginTop: 64,
+            marginLeft: 21,
+            marginRight: 21,
+            backgroundColor: '#F8F1F1',
+            borderWidth: 1,
+            borderColor: 'black',
             borderRadius: 5,
-            alignItems: 'center',
-            justifyContent: 'center',
           }}>
-          <Text
+          <View
             style={{
-              fontWeight: '500',
-              fontSize: 18,
-              color: 'white',
+              marginTop: 37,
+              justifyContent: 'center',
+              alignContent: 'center',
+              alignItems: 'center',
             }}>
-            Create Account
-          </Text>
+            <Text style={{fontWeight: '500', fontSize: 24}}>
+              Manage your brand
+            </Text>
+          </View>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text style={{fontWeight: '500', fontSize: 24}}>online</Text>
+          </View>
+
+          <View
+            style={{
+              marginTop: 37,
+              justifyContent: 'center',
+              alignContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{fontWeight: '500', fontSize: 18, color: '#BFBEBE'}}>
+              Listen to the online conversation and never miss the valuable
+              information, measure your performance and start actioning insights
+              that inform your strategy
+            </Text>
+          </View>
+
+          <TouchableHighlight
+            onPress={() => console.log('hi')}
+            style={{
+              height: 53,
+              width: 229,
+              backgroundColor: '#25414C',
+              borderRadius: 5,
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginTop: 20,
+              marginBottom: 20,
+              alignSelf: 'center',
+            }}>
+            <Text
+              style={{
+                fontWeight: '500',
+                fontSize: 18,
+                color: 'white',
+              }}>
+              Create your first alert
+            </Text>
+          </TouchableHighlight>
         </View>
       </View>
-    </SafeAreaView>
   );
 };
 

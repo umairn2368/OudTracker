@@ -4,16 +4,32 @@
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_luanch_screen.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xhdpi/luanch_screen.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_luanch_screen.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxhdpi/luanch_screen.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -24,19 +40,15 @@
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/layout_launch_screen.xml.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/layout/launch_screen.xml"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

@@ -79,15 +79,12 @@ const InformationFourth = ({navigation}) => {
         </View>
 
         <View style={{flexDirection: 'row', marginTop: 33, justifyContent: 'center',alignItems: 'center'}}>
+      
         <TouchableHighlight
               underlayColor=""
-              onPress={() => {
-                setCheckOnline(false),
-                  setCheckMediaListening(!checkMediaListening),
-                  setCheckBrandManagement(false),
-                  setCheckSocailMediaMarketing(false);
-              }}>
-              {checkMediaListening ? (
+              onPress={() => 
+                setCustomAlert(!customAlert)}>
+              {customAlert ? (
                 <View
                   style={{
                     height: 18,
@@ -120,13 +117,10 @@ const InformationFourth = ({navigation}) => {
           </Text>
           <TouchableHighlight
               underlayColor=""
-              onPress={() => {
-                setCheckOnline(false),
-                  setCheckMediaListening(!checkMediaListening),
-                  setCheckBrandManagement(false),
-                  setCheckSocailMediaMarketing(false);
-              }}>
-              {checkMediaListening ? (
+              onPress={() =>setUnlimitedSocial(!unlimitedSocial)}
+              style={{marginLeft:11}}
+              >
+              {unlimitedSocial ? (
                 <View
                   style={{
                     height: 18,
@@ -160,13 +154,10 @@ const InformationFourth = ({navigation}) => {
           </Text>
           <TouchableHighlight
               underlayColor=""
-              onPress={() => {
-                setCheckOnline(false),
-                  setCheckMediaListening(!checkMediaListening),
-                  setCheckBrandManagement(false),
-                  setCheckSocailMediaMarketing(false);
-              }}>
-              {checkMediaListening ? (
+              onPress={() => setUnlimited(!unlimited)}
+              style={{marginLeft:11}}
+              >
+              {unlimited ? (
                 <View
                   style={{
                     height: 18,
@@ -194,6 +185,7 @@ const InformationFourth = ({navigation}) => {
               fontWeight: '500',
               fontSize: 14,
               color: '#25414C',
+              paddingLeft: 5,
             }}>
             Unlimited
           </Text>

@@ -10,14 +10,14 @@ import {
   TouchableHighlight,
   TextInput,
 } from 'react-native';
-const {width, height} = Dimensions.get('window');
 
 import IconSearch from 'react-native-vector-icons/AntDesign';
+import colors from '../Constants/Colors';
 
 const Register = ({navigation}) => {
   const [signInCheck, setSignInCheck] = useState(false);
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <View
         style={{
           flex: 0,
@@ -46,7 +46,7 @@ const Register = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
-            color: '#25414C'
+            color: '#25414C',
           }}>
           {`You are one minute away from first oudpr
 (we timed it) No credit card required.`}
@@ -58,7 +58,7 @@ const Register = ({navigation}) => {
             fontSize: 14,
             marginTop: 26,
             marginLeft: 36,
-            color: '#25414C'
+            color: '#25414C',
           }}>
           Email
         </Text>
@@ -162,9 +162,7 @@ const Register = ({navigation}) => {
         <TouchableHighlight
           underlayColor=""
           disabled={signInCheck ? false : true}
-          onPress={() => 
-            navigation.navigate('InformationFirst')
-          }
+          onPress={() => navigation.navigate('InformationFirst')}
           style={{
             height: 43,
             width: 318,
@@ -181,7 +179,7 @@ const Register = ({navigation}) => {
             style={{
               fontWeight: '500',
               fontSize: 18,
-              color: 'white',
+              color: colors.white,
             }}>
             Create your account
           </Text>

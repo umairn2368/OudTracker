@@ -223,7 +223,7 @@ const Login = ({navigation}) => {
                 style={{
                   fontWeight: '500',
                   fontSize: 18,
-                  color: colors.white
+                  color: colors.white,
                 }}>
                 Log In
               </Text>
@@ -312,7 +312,7 @@ const Login = ({navigation}) => {
               style={{
                 height: 43,
                 width: 318,
-                backgroundColor:  colors.white,
+                backgroundColor: colors.white,
                 borderRadius: 5,
                 alignItems: 'center',
                 marginTop: 17,

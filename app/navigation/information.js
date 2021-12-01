@@ -25,17 +25,14 @@ const Information = () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="InformationFirst" component={InformationFirst} />
-
       <Stack.Screen name="InformationSecond" component={InformationSecond} />
-
       <Stack.Screen name="InformationThird" component={InformationThird} />
-
       <Stack.Screen name="InformationFourth" component={InformationFourth} />
-      {/* <Stack.Screen name="DashBoard" component={DashBoard} /> */}
       <Stack.Screen
         name="DrawerNavigationClass"
         component={DrawerNavigationClass}
       />
+      {/* <Stack.Screen name="DashBoard" component={DashBoard} /> */}
     </Stack.Navigator>
   );
 };

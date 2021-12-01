@@ -10,7 +10,6 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import colors from '../Constants/Colors';
-const {width, height} = Dimensions.get('window');
 
 const Welcome = ({navigation}) => {
   return (
@@ -20,12 +19,17 @@ const Welcome = ({navigation}) => {
           flex: 0.5,
           alignItems: 'center',
           justifyContent: 'flex-end',
-          backgroundColor: colors.white
+          backgroundColor: colors.white,
         }}>
         <Image source={require('../Assets/images/logo.png')} />
       </View>
 
-      <View style={{flex: 0.5, alignItems: 'center', backgroundColor: colors.white}}>
+      <View
+        style={{
+          flex: 0.5,
+          alignItems: 'center',
+          backgroundColor: colors.white,
+        }}>
         <Text
           style={{
             fontWeight: '500',
@@ -33,7 +37,7 @@ const Welcome = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
-            color: colors.darkBlue
+            color: colors.darkBlue,
           }}>
           Welcome
         </Text>
@@ -44,7 +48,7 @@ const Welcome = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
-            color: colors.darkBlue
+            color: colors.darkBlue,
           }}>
           {`Welcome to Qoud \n we Fragrance your Image`}
         </Text>
@@ -55,7 +59,7 @@ const Welcome = ({navigation}) => {
           flex: 0.5,
           alignItems: 'center',
           justifyContent: 'center',
-          color: colors.white
+          color: colors.white,
         }}>
         <TouchableHighlight
           underlayColor=""
@@ -72,7 +76,7 @@ const Welcome = ({navigation}) => {
             style={{
               fontWeight: '500',
               fontSize: 18,
-              color: colors.white
+              color: colors.white,
             }}>
             Log In
           </Text>
@@ -90,7 +94,7 @@ const Welcome = ({navigation}) => {
             justifyContent: 'center',
             marginTop: 17,
             borderWidth: 1,
-            borderColor: colors.darkGrey
+            borderColor: colors.darkGrey,
           }}>
           <Text
             style={{

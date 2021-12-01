@@ -12,10 +12,8 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-const {width, height} = Dimensions.get('window');
 
 import DropDownPicker from 'react-native-dropdown-picker';
-
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
 
@@ -29,7 +27,7 @@ const InformationThird = ({navigation}) => {
     useState(false);
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <ScrollView bounces={false} style={styles.scrollView}>
         <View
           style={{
@@ -413,7 +411,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     flex: 1,
     marginBottom: 10,
   },

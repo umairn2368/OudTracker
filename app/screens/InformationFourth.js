@@ -12,13 +12,10 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-const {width, height} = Dimensions.get('window');
 
 import DropDownPicker from 'react-native-dropdown-picker';
-
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
-
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 
 const InformationFourth = ({navigation}) => {
@@ -33,9 +30,9 @@ const InformationFourth = ({navigation}) => {
     useState(false);
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <ScrollView bounces={false} style={styles.scrollView}>
-      <View
+        <View
           style={{
             flex: 1,
             alignItems: 'center',
@@ -254,7 +251,7 @@ const InformationFourth = ({navigation}) => {
                   />
                 )}
               </TouchableHighlight>
-              <View style={{flex: 0.9,}}>
+              <View style={{flex: 0.9}}>
                 <Text
                   style={{
                     fontWeight: '500',
@@ -267,7 +264,8 @@ const InformationFourth = ({navigation}) => {
               </View>
             </View>
 
-            <View style={{flex: 1,marginLeft: 35, marginRight: 35, marginTop: 5}}>
+            <View
+              style={{flex: 1, marginLeft: 35, marginRight: 35, marginTop: 5}}>
               <Text
                 style={{
                   fontWeight: '500',
@@ -299,9 +297,9 @@ const InformationFourth = ({navigation}) => {
                 underlayColor=""
                 onPress={() => {
                   setCheckOnline(false),
-                  setCheckMediaListening(!checkMediaListening),
-                  setCheckBrandManagement(false),
-                  setCheckSocailMediaMarketing(false);
+                    setCheckMediaListening(!checkMediaListening),
+                    setCheckBrandManagement(false),
+                    setCheckSocailMediaMarketing(false);
                 }}
                 style={{
                   flex: 0.1,
@@ -330,7 +328,7 @@ const InformationFourth = ({navigation}) => {
                   />
                 )}
               </TouchableHighlight>
-              <View style={{flex: 0.9,}}>
+              <View style={{flex: 0.9}}>
                 <Text
                   style={{
                     fontWeight: '500',
@@ -343,18 +341,19 @@ const InformationFourth = ({navigation}) => {
               </View>
             </View>
 
-            <View style={{flex: 1,marginLeft: 35, marginRight: 35, marginTop: 5}}>
+            <View
+              style={{flex: 1, marginLeft: 35, marginRight: 35, marginTop: 5}}>
               <Text
                 style={{
                   fontWeight: '500',
                   fontSize: 14,
                   color: colors.lightGrey,
-                }}>   14 days free trial. No credit card required 199$/month after
+                }}>
+                14 days free trial. No credit card required 199$/month after
                 trial
               </Text>
             </View>
           </View>
-
 
           <View
             style={{
@@ -376,9 +375,9 @@ const InformationFourth = ({navigation}) => {
                 underlayColor=""
                 onPress={() => {
                   setCheckOnline(false),
-                  setCheckMediaListening(false),
-                  setCheckBrandManagement(!checkBrandManagement),
-                  setCheckSocailMediaMarketing(false);
+                    setCheckMediaListening(false),
+                    setCheckBrandManagement(!checkBrandManagement),
+                    setCheckSocailMediaMarketing(false);
                 }}
                 style={{
                   flex: 0.1,
@@ -407,7 +406,7 @@ const InformationFourth = ({navigation}) => {
                   />
                 )}
               </TouchableHighlight>
-              <View style={{flex: 0.9,}}>
+              <View style={{flex: 0.9}}>
                 <Text
                   style={{
                     fontWeight: '500',
@@ -420,13 +419,15 @@ const InformationFourth = ({navigation}) => {
               </View>
             </View>
 
-            <View style={{flex: 1,marginLeft: 35, marginRight: 35, marginTop: 5}}>
+            <View
+              style={{flex: 1, marginLeft: 35, marginRight: 35, marginTop: 5}}>
               <Text
                 style={{
                   fontWeight: '500',
                   fontSize: 14,
                   color: colors.lightGrey,
-                }}>   14 days free trial. No credit card required 99$ /month after
+                }}>
+                14 days free trial. No credit card required 99$ /month after
                 trial
               </Text>
             </View>
@@ -442,7 +443,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     flex: 1,
     marginBottom: 10,
   },

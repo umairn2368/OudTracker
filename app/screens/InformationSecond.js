@@ -9,12 +9,15 @@ import {
   SafeAreaView,
   TouchableHighlight,
   TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 import DropDownPicker from 'react-native-dropdown-picker';
 
 import PhoneInput from 'react-native-phone-number-input';
+import colors from '../Constants/Colors';
 
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 
@@ -37,24 +40,35 @@ const InformationSecond = ({navigation}) => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1}}>
+      <ScrollView bounces={false} style={styles.scrollView}>
       <View
-        style={{
-          flex: 0,
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          marginTop: 20,
-        }}>
-        <Image source={require('../Assets/images/logo.png')} />
-        <View
           style={{
+            flex: 1,
             alignItems: 'center',
-            marginTop: 37,
           }}>
-          <Image
-            source={require('../Assets/images/secondInformationPic.png')}
-          />
+          <View
+            style={{
+              marginTop: 20,
+              marginBottom: 30,
+              alignItems: 'center',
+            }}>
+            <Image source={require('../Assets/images/logo.png')} />
+          </View>
+          <View
+            style={{
+              width: '100%',
+              alignItems: 'center',
+            }}>
+            <Image
+              source={require('../Assets/images/secondInformationPic.png')}
+              style={{width: '70%'}}
+            />
+          </View>
         </View>
-      </View>
+
       <View style={{flex: 1}}>
         <Text
           style={{
@@ -63,7 +77,7 @@ const InformationSecond = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
-            color: '#25414C',
+            color: colors.darkBlue,
           }}>
           Where do you Work?
         </Text>
@@ -75,6 +89,7 @@ const InformationSecond = ({navigation}) => {
               fontSize: 14,
               justifyContent: 'center',
               textAlign: 'center',
+              color: colors.darkBlue,
             }}>
             {`Tell us more about your company, so we can Adapt your experience to your needs`}
           </Text>
@@ -86,6 +101,7 @@ const InformationSecond = ({navigation}) => {
             fontSize: 14,
             marginTop: 26,
             marginLeft: 36,
+            color: colors.darkBlue,
           }}>
           Company Name*
         </Text>
@@ -93,14 +109,14 @@ const InformationSecond = ({navigation}) => {
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
             placeholder="Enter your company name"
-            placeholderTextColor="#BFBEBE"
+            placeholderTextColor={colors.lightGrey}
             style={{
               height: 44,
-              backgroundColor: '#FFFFFF',
+              backgroundColor: colors.white,
               borderWidth: 1,
-              borderColor: '#BFBEBE',
+              borderColor: colors.lightGrey,
               borderRadius: 5,
-              color: 'black',
+              color: colors.black,
               paddingLeft: 10,
               paddingRight: 10,
             }}
@@ -113,7 +129,7 @@ const InformationSecond = ({navigation}) => {
             fontSize: 14,
             marginTop: 9,
             marginLeft: 36,
-            color: '#25414C',
+            color: colors.darkBlue,
           }}>
           Full Name
         </Text>
@@ -121,14 +137,14 @@ const InformationSecond = ({navigation}) => {
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
             placeholder="John Doe"
-            placeholderTextColor="#BFBEBE"
+            placeholderTextColor={colors.lightGrey}
             style={{
               height: 44,
-              backgroundColor: '#FFFFFF',
+              backgroundColor:  colors.white,
               borderWidth: 1,
               borderRadius: 5,
-              borderColor: '#BFBEBE',
-              color: 'black',
+              borderColor: colors.lightGrey,
+              color:  colors.black,
               paddingLeft: 10,
               paddingRight: 10,
             }}
@@ -141,7 +157,7 @@ const InformationSecond = ({navigation}) => {
             fontSize: 14,
             marginTop: 9,
             marginLeft: 36,
-            color: '#25414C',
+            color: colors.darkBlue,
           }}>
           Company Size*
         </Text>
@@ -149,14 +165,14 @@ const InformationSecond = ({navigation}) => {
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
             placeholder="Chose your company name"
-            placeholderTextColor="#BFBEBE"
+            placeholderTextColor={colors.lightGrey}
             style={{
               height: 44,
-              backgroundColor: '#FFFFFF',
+              backgroundColor: colors.white,
               borderWidth: 1,
               borderRadius: 5,
-              borderColor: '#BFBEBE',
-              color: 'black',
+              borderColor: colors.lightGrey,
+              color: colors.black,
               paddingLeft: 10,
               paddingRight: 10,
             }}
@@ -169,7 +185,7 @@ const InformationSecond = ({navigation}) => {
             fontSize: 14,
             marginTop: 9,
             marginLeft: 36,
-            color: '#25414C',
+            color: colors.darkBlue,
           }}>
           Are you an agency*
         </Text>
@@ -194,10 +210,10 @@ const InformationSecond = ({navigation}) => {
                     width: 18,
                     borderWidth: 1,
                     borderRadius: 18,
-                    borderColor: '#BFBEBE',
+                    borderColor: colors.lightGrey,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: '#32BEA6',
+                    backgroundColor: colors.green,
                   }}
                 />
               ) : (
@@ -207,7 +223,7 @@ const InformationSecond = ({navigation}) => {
                     width: 18,
                     borderRadius: 18,
                     borderWidth: 1,
-                    borderColor: '#BFBEBE',
+                    borderColor: colors.lightGrey,
                   }}
                 />
               )}
@@ -217,7 +233,7 @@ const InformationSecond = ({navigation}) => {
                 fontWeight: '500',
                 fontSize: 14,
                 paddingLeft: 5,
-                color: '#BFBEBE',
+                color: colors.lightGrey,
               }}>
               Yes
             </Text>
@@ -236,10 +252,10 @@ const InformationSecond = ({navigation}) => {
                     width: 18,
                     borderWidth: 1,
                     borderRadius: 18,
-                    borderColor: '#BFBEBE',
+                    borderColor: colors.lightGrey,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: '#32BEA6',
+                    backgroundColor: colors.green,
                   }}
                 />
               ) : (
@@ -249,7 +265,7 @@ const InformationSecond = ({navigation}) => {
                     width: 18,
                     borderRadius: 18,
                     borderWidth: 1,
-                    borderColor: '#BFBEBE',
+                    borderColor: colors.lightGrey,
                   }}
                 />
               )}
@@ -259,7 +275,7 @@ const InformationSecond = ({navigation}) => {
                 fontWeight: '500',
                 fontSize: 14,
                 paddingLeft: 5,
-                color: '#BFBEBE',
+                color: colors.lightGrey,
               }}>
               No
             </Text>
@@ -274,7 +290,7 @@ const InformationSecond = ({navigation}) => {
                 fontSize: 14,
                 marginTop: 9,
                 marginLeft: 36,
-                color: '#25414C',
+                color: colors.darkBlue,
               }}>
               Service(s) you provide*
             </Text>
@@ -282,14 +298,14 @@ const InformationSecond = ({navigation}) => {
             <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
               <TextInput
                 placeholder="Company service"
-                placeholderTextColor="#BFBEBE"
+                placeholderTextColor={colors.lightGrey}
                 style={{
                   height: 44,
-                  backgroundColor: '#FFFFFF',
+                  backgroundColor: colors.white,
                   borderWidth: 1,
                   borderRadius: 5,
-                  borderColor: '#BFBEBE',
-                  color: 'black',
+                  borderColor: colors.lightGrey,
+                  color: colors.black,
                   paddingLeft: 10,
                   paddingRight: 10,
                 }}
@@ -304,7 +320,7 @@ const InformationSecond = ({navigation}) => {
           style={{
             height: 43,
             width: 318,
-            backgroundColor: '#32BEA6',
+            backgroundColor: colors.green,
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -321,8 +337,21 @@ const InformationSecond = ({navigation}) => {
           </Text>
         </TouchableHighlight>
       </View>
-    </SafeAreaView>
+      </ScrollView>
+      </KeyboardAvoidingView>
+      </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  scrollView: {
+    backgroundColor: 'white',
+    flex: 1,
+    marginBottom: 10,
+  },
+});
 
 export default InformationSecond;

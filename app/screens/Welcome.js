@@ -9,20 +9,23 @@ import {
   SafeAreaView,
   TouchableHighlight,
 } from 'react-native';
+import colors from '../Constants/Colors';
 const {width, height} = Dimensions.get('window');
 
 const Welcome = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <View
         style={{
           flex: 0.5,
           alignItems: 'center',
           justifyContent: 'flex-end',
+          backgroundColor: colors.white
         }}>
         <Image source={require('../Assets/images/logo.png')} />
       </View>
-      <View style={{flex: 0.5, alignItems: 'center'}}>
+
+      <View style={{flex: 0.5, alignItems: 'center', backgroundColor: colors.white}}>
         <Text
           style={{
             fontWeight: '500',
@@ -30,6 +33,7 @@ const Welcome = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
+            color: colors.darkBlue
           }}>
           Welcome
         </Text>
@@ -40,6 +44,7 @@ const Welcome = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
+            color: colors.darkBlue
           }}>
           {`Welcome to Qoud \n we Fragrance your Image`}
         </Text>
@@ -50,6 +55,7 @@ const Welcome = ({navigation}) => {
           flex: 0.5,
           alignItems: 'center',
           justifyContent: 'center',
+          color: colors.white
         }}>
         <TouchableHighlight
           underlayColor=""
@@ -57,7 +63,7 @@ const Welcome = ({navigation}) => {
           style={{
             height: 43,
             width: 318,
-            backgroundColor: '#32BEA6',
+            backgroundColor: colors.green,
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -66,30 +72,31 @@ const Welcome = ({navigation}) => {
             style={{
               fontWeight: '500',
               fontSize: 18,
-              color: 'white',
+              color: colors.white
             }}>
             Log In
           </Text>
         </TouchableHighlight>
+
         <TouchableHighlight
           underlayColor=""
           onPress={() => navigation.navigate('Register')}
           style={{
             height: 43,
             width: 318,
-            backgroundColor: '#FFFFFF',
+            backgroundColor: colors.white,
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
             marginTop: 17,
             borderWidth: 1,
-            borderColor: '#E5E5E5',
+            borderColor: colors.darkGrey
           }}>
           <Text
             style={{
               fontWeight: '500',
               fontSize: 18,
-              color: 'black',
+              color: colors.black,
             }}>
             Register
           </Text>

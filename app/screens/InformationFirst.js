@@ -9,12 +9,15 @@ import {
   SafeAreaView,
   TouchableHighlight,
   TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
 } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 import DropDownPicker from 'react-native-dropdown-picker';
 
 import PhoneInput from 'react-native-phone-number-input';
+import colors from '../Constants/Colors';
 
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 
@@ -33,6 +36,10 @@ const InformationFirst = ({navigation}) => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1}}>
+      <ScrollView bounces={false} style={styles.scrollView}>
       <View
         style={{
           flex: 0,
@@ -47,7 +54,7 @@ const InformationFirst = ({navigation}) => {
             marginTop: 37,
           }}>
           <Image
-            source={require('../Assets/images/secondInformationPic.png')}
+            source={require('../Assets/images/firstInformationPic.png')}
           />
         </View>
       </View>
@@ -60,7 +67,7 @@ const InformationFirst = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
-            color: '#25414C',
+            color: colors.darkBlue,
           }}>
           Hello, Nice to meet you!
         </Text>
@@ -71,6 +78,7 @@ const InformationFirst = ({navigation}) => {
               fontSize: 14,
               justifyContent: 'center',
               textAlign: 'center',
+              color: colors.darkBlue,
             }}>
             {`Lets get know to each other so we can set up your account`}
           </Text>
@@ -82,6 +90,7 @@ const InformationFirst = ({navigation}) => {
             fontSize: 14,
             marginTop: 26,
             marginLeft: 36,
+            color: colors.darkBlue,
           }}>
           Email
         </Text>
@@ -89,14 +98,14 @@ const InformationFirst = ({navigation}) => {
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
             placeholder="Enter your email"
-            placeholderTextColor="#BFBEBE"
+            placeholderTextColor={colors.lightGrey}
             style={{
               height: 44,
-              backgroundColor: '#FFFFFF',
+              backgroundColor: colors.white,
               borderWidth: 1,
-              borderColor: '#BFBEBE',
+              borderColor: colors.lightGrey,
               borderRadius: 5,
-              color: 'black',
+              color: colors.black,
               paddingLeft: 10,
               paddingRight: 10,
             }}
@@ -109,6 +118,7 @@ const InformationFirst = ({navigation}) => {
             fontSize: 14,
             marginTop: 9,
             marginLeft: 36,
+            color: colors.darkBlue,
           }}>
           Full Name
         </Text>
@@ -116,14 +126,14 @@ const InformationFirst = ({navigation}) => {
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
             placeholder="John Doe"
-            placeholderTextColor="#BFBEBE"
+            placeholderTextColor={colors.lightGrey}
             style={{
               height: 44,
-              backgroundColor: '#FFFFFF',
+              backgroundColor: colors.white,
               borderWidth: 1,
               borderRadius: 5,
-              borderColor: '#BFBEBE',
-              color: 'black',
+              borderColor: colors.lightGrey,
+              color: colors.black,
               paddingLeft: 10,
               paddingRight: 10,
             }}
@@ -167,6 +177,7 @@ const InformationFirst = ({navigation}) => {
             fontSize: 14,
             marginTop: 26,
             marginLeft: 36,
+            color: colors.darkBlue
           }}>
           Phone No*
         </Text>
@@ -191,7 +202,7 @@ const InformationFirst = ({navigation}) => {
               height: 50,
               borderWidth: 1,
               borderRadius: 5,
-              borderColor: '#BFBEBE',
+              borderColor: colors.lightGrey,
               alignItems: 'flex-start',
               justifyContent: 'flex-start',
             }}
@@ -202,7 +213,7 @@ const InformationFirst = ({navigation}) => {
             textInputStyle={{width: '100%', height: 44}}
             withDarkTheme
             withShadow
-            autoFocus
+            // autoFocus
           />
         </View>
 
@@ -212,7 +223,7 @@ const InformationFirst = ({navigation}) => {
           style={{
             height: 43,
             width: 318,
-            backgroundColor: '#32BEA6',
+            backgroundColor: colors.green,
             borderRadius: 5,
             alignItems: 'center',
             justifyContent: 'center',
@@ -223,14 +234,28 @@ const InformationFirst = ({navigation}) => {
             style={{
               fontWeight: '500',
               fontSize: 18,
-              color: 'white',
+              color: colors.white,
             }}>
             Next Step
           </Text>
         </TouchableHighlight>
       </View>
-    </SafeAreaView>
+      </ScrollView>
+      </KeyboardAvoidingView>
+      </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  scrollView: {
+    backgroundColor: colors.white,
+    flex: 1,
+    marginBottom: 10,
+  },
+});
+
 
 export default InformationFirst;

@@ -46,6 +46,7 @@ const Register = ({navigation}) => {
             justifyContent: 'center',
             textAlign: 'center',
             paddingTop: 37,
+            color: '#25414C'
           }}>
           {`You are one minute away from first oudpr
 (we timed it) No credit card required.`}
@@ -57,6 +58,7 @@ const Register = ({navigation}) => {
             fontSize: 14,
             marginTop: 26,
             marginLeft: 36,
+            color: '#25414C'
           }}>
           Email
         </Text>

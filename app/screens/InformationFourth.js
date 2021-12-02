@@ -13,7 +13,7 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-import DropDownPicker from 'react-native-dropdown-picker';
+import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';

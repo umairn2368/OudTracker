@@ -20,10 +20,26 @@ import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 import IconSearch from 'react-native-vector-icons/AntDesign';
 import EyeIcon from 'react-native-vector-icons/Feather';
 import colors from '../Constants/Colors';
+import {useDispatch} from 'react-redux';
+import types from '../Redux/types';
 
 const Login = ({navigation}) => {
+  const dispatch = useDispatch();
   const [signInCheck, setSignInCheck] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const login=()=>{
+    let user={email: email, password: password}
+    dispatch({
+      type: types.ADD_USER,
+      user: user,
+    });
+    navigation.navigate('DashBoard');
+  }
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -85,6 +101,7 @@ const Login = ({navigation}) => {
               <TextInput
                 placeholder="Enter your email"
                 placeholderTextColor={colors.lightGrey}
+                onChangeText={(val)=>setEmail(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -123,6 +140,7 @@ const Login = ({navigation}) => {
                 placeholder="Enter your password"
                 placeholderTextColor={colors.lightGrey}
                 secureTextEntry={showPassword}
+                onChangeText={(val)=>setPassword(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -208,7 +226,10 @@ const Login = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => navigation.navigate('Login')}
+              onPress={() => 
+                //navigation.navigate('Login')
+                login()
+            }
               style={{
                 height: 43,
                 width: 318,

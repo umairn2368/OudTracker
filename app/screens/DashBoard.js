@@ -9,9 +9,13 @@ import {
   TouchableHighlight,
   SafeAreaView,
 } from 'react-native';
+
 import colors from '../Constants/Colors';
+import {useSelector, useDispatch} from 'react-redux';
+
 
 const DashBoard = () => {
+  const user = useSelector((state) => state?.auth?.user);
   return (
     <View style={{flex: 1}}>
       <View

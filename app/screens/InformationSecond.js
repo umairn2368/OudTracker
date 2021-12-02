@@ -13,23 +13,41 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-import DropDownPicker from 'react-native-dropdown-picker';
+import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 
 const InformationSecond = ({navigation}) => {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
-  ]);
+  let data = [
+    {
+      value: 'One',
+    },
+    {
+      value: 'Two',
+    },
+    {
+      value: 'Three',
+    },
+    {
+      value: 'Four',
+    },
+  ];
 
-  const [value2, setValue2] = useState('');
-  const [formattedValue, setFormattedValue] = useState('');
-  const [valid, setValid] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
+  let data2 = [
+    {
+      value: 'Test One',
+    },
+    {
+      value: 'Test Two',
+    },
+    {
+      value: 'Test Three',
+    },
+    {
+      value: 'Test Four',
+    },
+  ];
 
   const [checkAgencyYes, setCheckAgencyYes] = useState(false);
 
@@ -159,20 +177,27 @@ const InformationSecond = ({navigation}) => {
               Company Size*
             </Text>
 
-            <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
-              <TextInput
+            <View
+              style={{
+                width: '84%',
+                marginTop: 6,
+                alignSelf: 'center',
+                borderWidth: 1,
+                borderColor: colors.lightGrey,
+                borderRadius: 5,
+              }}>
+              <Dropdown
+                icon="chevron-down"
+                iconColor="#BFBEBE"
                 placeholder="Chose your company name"
                 placeholderTextColor={colors.lightGrey}
+                data={data}
                 style={{
+                  width: '100%',
                   height: 44,
-                  backgroundColor: colors.white,
-                  borderWidth: 1,
-                  borderRadius: 5,
-                  borderColor: colors.lightGrey,
-                  color: colors.black,
-                  paddingLeft: 10,
-                  paddingRight: 10,
+                  backgroundColor: 'white',
                 }}
+                baseColor="white"
               />
             </View>
 
@@ -292,20 +317,27 @@ const InformationSecond = ({navigation}) => {
                   Service(s) you provide*
                 </Text>
 
-                <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
-                  <TextInput
+                <View
+                  style={{
+                    width: '84%',
+                    marginTop: 6,
+                    alignSelf: 'center',
+                    borderWidth: 1,
+                    borderColor: colors.lightGrey,
+                    borderRadius: 5,
+                  }}>
+                  <Dropdown
+                    icon="chevron-down"
+                    iconColor="#BFBEBE"
                     placeholder="Company service"
                     placeholderTextColor={colors.lightGrey}
+                    data={data2}
                     style={{
+                      width: '100%',
                       height: 44,
-                      backgroundColor: colors.white,
-                      borderWidth: 1,
-                      borderRadius: 5,
-                      borderColor: colors.lightGrey,
-                      color: colors.black,
-                      paddingLeft: 10,
-                      paddingRight: 10,
+                      backgroundColor: 'white',
                     }}
+                    baseColor="white"
                   />
                 </View>
               </>

@@ -13,23 +13,31 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 
-import DropDownPicker from 'react-native-dropdown-picker';
+import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
+
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
 
 const InformationFirst = ({navigation}) => {
-  const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'},
-  ]);
 
   const [value2, setValue2] = useState('');
   const [formattedValue, setFormattedValue] = useState('');
   const [valid, setValid] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+
+  let data = [
+    {
+      value: 'Devloper',
+    },
+    {
+      value: 'Graphic Designer',
+    },
+    {
+      value: 'Backend Developer',
+    },
+  ];
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -136,43 +144,47 @@ const InformationFirst = ({navigation}) => {
                 }}
               />
             </View>
-            {/* 
-        <Text
-          style={{
-            fontWeight: '500',
-            fontSize: 14,
-            marginTop: 26,
-            marginLeft: 36,
-          }}>
-          Job Position*
-        </Text> */}
-
-            {/* <View>
-          <DropDownPicker
-            zIndex={1000}
-            zIndexInverse={1000}
-            showTickIcon={false}
-            dropDownDirection={'BOTTOM'}
-            open={open}
-            value={value2}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue2}
-            setItems={setItems}
-            style={{
-              width: widthPercentageToDP(90),
-              borderWidth: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: '#ABB1BB',
-            }}
-          />
-        </View> */}
 
             <Text
               style={{
                 fontWeight: '500',
                 fontSize: 14,
-                marginTop: 26,
+                marginTop: 9,
+                marginLeft: 36,
+                color: colors.darkBlue,
+              }}>
+              Job Position*
+            </Text>
+
+            <View
+              style={{
+                width: '84%',
+                marginTop: 6,
+                alignSelf: 'center',
+                borderWidth: 1,
+                borderColor: colors.lightGrey,
+                borderRadius: 5,
+              }}>
+              <Dropdown
+                icon="chevron-down"
+                iconColor="#BFBEBE"
+                placeholder="Select a job position"
+                placeholderTextColor={colors.lightGrey}
+                data={data}
+                style={{
+                  width: '100%',
+                  height: 44,
+                  backgroundColor: 'white',
+                }}
+                baseColor="white"
+              />
+            </View>
+
+            <Text
+              style={{
+                fontWeight: '500',
+                fontSize: 14,
+                marginTop: 6,
                 marginLeft: 36,
                 color: colors.darkBlue,
               }}>

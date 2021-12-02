@@ -12,14 +12,12 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-
-import DropDownPicker from 'react-native-dropdown-picker';
 import PhoneInput from 'react-native-phone-number-input';
 import colors from '../Constants/Colors';
 
 import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
-
 const InformationThird = ({navigation}) => {
+
   const [checkOnline, setCheckOnline] = useState(false);
   const [checkMediaListening, setCheckMediaListening] = useState(false);
   const [checkBrandManagement, setCheckBrandManagement] = useState(false);

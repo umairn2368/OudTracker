@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Welcome from '../../Screens/Welcome';
-import Login from '../../Screens/Login';
-import Register from '../../Screens/Register';
-import InformationFirst from '../../Screens/InformationFirst';
-import InformationSecond from '../../Screens/InformationSecond';
-import InformationThird from '../../Screens/InformationThird';
-import InformationFourth from '../../Screens/InformationFourth';
+import Welcome from '../../screens/Welcome';
+import Login from '../../screens/Login';
+import Register from '../../screens/Register';
+import InformationFirst from '../../screens/InformationFirst';
+import InformationSecond from '../../screens/InformationSecond';
+import InformationThird from '../../screens/InformationThird';
+import InformationFourth from '../../screens/InformationFourth';
 
 const Stack = createNativeStackNavigator();
 

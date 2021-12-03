@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
-import {persistor, store} from './app/Redux/store';
+import {persistor, store} from './app/redux/store';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';

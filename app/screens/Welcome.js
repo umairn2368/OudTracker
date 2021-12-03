@@ -9,7 +9,7 @@ import {
   SafeAreaView,
   TouchableHighlight,
 } from 'react-native';
-import colors from '../Constants/Colors';
+import colors from '../constants/colors';
 
 const Welcome = ({navigation}) => {
   return (
@@ -21,7 +21,7 @@ const Welcome = ({navigation}) => {
           justifyContent: 'flex-end',
           backgroundColor: colors.white,
         }}>
-        <Image source={require('../Assets/images/logo.png')} />
+        <Image source={require('../assets/images/logo.png')} />
       </View>
 
       <View

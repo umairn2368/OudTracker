@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import Styles from './Styles';
 
-import {heightPercentageToDP} from '../../Helper/Responsive';
+import {heightPercentageToDP} from '../../helper/Responsive';
 
 function Container({children, safeArea, fixedHeight, check}) {
   const Root = safeArea ? SafeAreaView : View;

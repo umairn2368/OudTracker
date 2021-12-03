@@ -1,16 +1,11 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import {
-  Dimensions,
-  Platform,
-  ScrollView,
   View,
-  Image,
   Text,
   TouchableHighlight,
-  SafeAreaView,
 } from 'react-native';
 
-import colors from '../Constants/Colors';
+import colors from '../constants/colors';
 import {useSelector, useDispatch} from 'react-redux';
 
 

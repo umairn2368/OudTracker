@@ -14,14 +14,14 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {Container} from '../Components/Container/Container';
-import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
+import {Container} from '../components/Container/container';
+import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 
 import IconSearch from 'react-native-vector-icons/AntDesign';
 import EyeIcon from 'react-native-vector-icons/Feather';
-import colors from '../Constants/Colors';
+import colors from '../constants/colors';
 import {useDispatch} from 'react-redux';
-import types from '../Redux/types';
+import types from '../redux/types';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
               justifyContent: 'flex-end',
               marginTop: 20,
             }}>
-            <Image source={require('../Assets/images/logo.png')} />
+            <Image source={require('../assets/images/logo.png')} />
           </View>
 
           <View style={{flex: 1}}>
@@ -308,7 +308,7 @@ const Login = ({navigation}) => {
                     paddingRight: 15,
                   }}>
                   <Image
-                    source={require('../Assets/images/google.png')}
+                    source={require('../assets/images/google.png')}
                     style={{width: 18, height: 18}}
                   />
                 </View>
@@ -348,7 +348,7 @@ const Login = ({navigation}) => {
                     paddingRight: 15,
                   }}>
                   <Image
-                    source={require('../Assets/images/facebook.png')}
+                    source={require('../assets/images/facebook.png')}
                     style={{width: 18, height: 18}}
                   />
                 </View>

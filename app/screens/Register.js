@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import IconSearch from 'react-native-vector-icons/AntDesign';
-import colors from '../Constants/Colors';
+import colors from '../constants/colors';
 
 const Register = ({navigation}) => {
   const [signInCheck, setSignInCheck] = useState(false);
@@ -25,7 +25,7 @@ const Register = ({navigation}) => {
           justifyContent: 'flex-end',
           marginTop: 20,
         }}>
-        <Image source={require('../Assets/images/logo.png')} />
+        <Image source={require('../assets/images/logo.png')} />
       </View>
       <View style={{flex: 1}}>
         <Text

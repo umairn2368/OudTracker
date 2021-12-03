@@ -16,8 +16,8 @@ import {
 import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 
 import PhoneInput from 'react-native-phone-number-input';
-import colors from '../Constants/Colors';
-import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
+import colors from '../constants/colors';
+import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 
 const InformationFirst = ({navigation}) => {
   const [value, setValue] = useState(null);
@@ -52,14 +52,14 @@ const InformationFirst = ({navigation}) => {
               justifyContent: 'flex-end',
               marginTop: 20,
             }}>
-            <Image source={require('../Assets/images/logo.png')} />
+            <Image source={require('../assets/images/logo.png')} />
             <View
               style={{
                 alignItems: 'center',
                 marginTop: 37,
               }}>
               <Image
-                source={require('../Assets/images/firstInformationPic.png')}
+                source={require('../assets/images/firstInformationPic.png')}
               />
             </View>
           </View>

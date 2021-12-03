@@ -15,8 +15,8 @@ import {
 
 import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 import PhoneInput from 'react-native-phone-number-input';
-import colors from '../Constants/Colors';
-import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
+import colors from '../constants/colors';
+import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 
 const InformationFourth = ({navigation}) => {
   const [customAlert, setCustomAlert] = useState(false);
@@ -43,7 +43,7 @@ const InformationFourth = ({navigation}) => {
               marginBottom: 30,
               alignItems: 'center',
             }}>
-            <Image source={require('../Assets/images/logo.png')} />
+            <Image source={require('../assets/images/logo.png')} />
           </View>
           <View
             style={{
@@ -51,7 +51,7 @@ const InformationFourth = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Image
-              source={require('../Assets/images/fourthInformationPic.png')}
+              source={require('../assets/images/fourthInformationPic.png')}
               style={{width: '70%'}}
             />
           </View>

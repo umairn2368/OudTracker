@@ -13,9 +13,9 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
-import colors from '../Constants/Colors';
+import colors from '../constants/colors';
 
-import {heightPercentageToDP, widthPercentageToDP} from '../Helper/Responsive';
+import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 const InformationThird = ({navigation}) => {
 
   const [checkOnline, setCheckOnline] = useState(false);
@@ -38,7 +38,7 @@ const InformationThird = ({navigation}) => {
               marginBottom: 30,
               alignItems: 'center',
             }}>
-            <Image source={require('../Assets/images/logo.png')} />
+            <Image source={require('../assets/images/logo.png')} />
           </View>
           <View
             style={{
@@ -46,7 +46,7 @@ const InformationThird = ({navigation}) => {
               alignItems: 'center',
             }}>
             <Image
-              source={require('../Assets/images/thirdInformationPic.png')}
+              source={require('../assets/images/thirdInformationPic.png')}
               style={{width: '70%'}}
             />
           </View>

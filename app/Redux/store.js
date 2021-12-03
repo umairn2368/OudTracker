@@ -4,7 +4,7 @@ import {persistReducer, persistStore} from 'redux-persist';
 import createSensitiveStorage from 'redux-persist-sensitive-storage';
 import ReduxThunk from 'redux-thunk';
 
-import reducers from '../Redux/Reducers/index';
+import reducers from './reducers/index';
 
 const storage = createSensitiveStorage({
   keychainService: 'oudtracker',

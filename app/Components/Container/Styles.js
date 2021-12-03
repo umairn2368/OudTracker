@@ -1,6 +1,6 @@
 const {StyleSheet} = require('react-native');
 
-import colors from '../../Constants/Colors';
+import colors from '../../constants/colors';
 
 export default StyleSheet.create({
   container: {

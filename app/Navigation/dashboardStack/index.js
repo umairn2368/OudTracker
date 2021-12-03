@@ -1,14 +1,13 @@
 import * as React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import DashBoard from '../Screens/DashBoard';
-import DrawerNavigationClass from '../Screens/drawer';
+import Home from '../../Screens/Home';
+import DrawerNavigationClass from '../../Screens/drawer';
 
 const Stack = createNativeStackNavigator();
 
-const Home = () => {
+const DashBoard = () => {
   return (
     <Stack.Navigator
       initialRouteName="Welcome"
@@ -18,9 +17,9 @@ const Home = () => {
         name="DrawerNavigationClass"
         component={DrawerNavigationClass}
       />
-      <Stack.Screen name="DashBoard" component={DashBoard} />
+      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
 };
 
-export default Home;
+export default DashBoard;

@@ -14,7 +14,7 @@ import colors from '../Constants/Colors';
 import {useSelector, useDispatch} from 'react-redux';
 
 
-const DashBoard = () => {
+const Home = () => {
   const user = useSelector((state) => state?.auth?.user);
   return (
     <View style={{flex: 1}}>
@@ -84,4 +84,4 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default Home;

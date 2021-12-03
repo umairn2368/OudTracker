@@ -31,15 +31,13 @@ const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
-  const login=()=>{
-    let user={email: email, password: password}
+  const login = () => {
+    let user = {email: email, password: password};
     dispatch({
       type: types.ADD_USER,
       user: user,
     });
-    navigation.navigate('DashBoard');
-  }
+  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -101,7 +99,7 @@ const Login = ({navigation}) => {
               <TextInput
                 placeholder="Enter your email"
                 placeholderTextColor={colors.lightGrey}
-                onChangeText={(val)=>setEmail(val)}
+                onChangeText={val => setEmail(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -140,7 +138,7 @@ const Login = ({navigation}) => {
                 placeholder="Enter your password"
                 placeholderTextColor={colors.lightGrey}
                 secureTextEntry={showPassword}
-                onChangeText={(val)=>setPassword(val)}
+                onChangeText={val => setPassword(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -226,10 +224,10 @@ const Login = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => 
+              onPress={() =>
                 //navigation.navigate('Login')
                 login()
-            }
+              }
               style={{
                 height: 43,
                 width: 318,

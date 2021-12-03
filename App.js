@@ -7,9 +7,8 @@ import {persistor, store} from './app/Redux/store';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen';
-import NavContainer from './app/Navigation/index';
 
-const Stack = createNativeStackNavigator();
+import Navigation from './app/navigation/index';
 
 const App = () => {
   React.useEffect(() => {
@@ -19,7 +18,7 @@ const App = () => {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <Provider store={store}>
-        <NavigationContainer><NavContainer/></NavigationContainer>
+        <NavigationContainer><Navigation/></NavigationContainer>
       </Provider>
     </PersistGate>
   );

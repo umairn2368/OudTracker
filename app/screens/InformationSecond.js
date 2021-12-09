@@ -12,9 +12,9 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
 } from 'react-native';
-
 import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 import PhoneInput from 'react-native-phone-number-input';
+
 import colors from '../constants/colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 

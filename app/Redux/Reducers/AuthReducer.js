@@ -1,8 +1,7 @@
 import types from '../types';
 
 const INITIAL_STATE = {
-  user: {
-  },
+  user: {},
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -13,6 +12,9 @@ export default (state = INITIAL_STATE, action) => {
         user: action.user,
         accessToken: action.accessToken,
       };
+
+    case types.REVERT_AUTH:
+      return {...state, user: {}};
 
     default:
       return state;

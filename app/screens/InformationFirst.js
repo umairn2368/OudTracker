@@ -27,6 +27,9 @@ const InformationFirst = ({navigation}) => {
   const [valid, setValid] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+
   let data = [
     {
       value: 'Devloper',
@@ -104,6 +107,7 @@ const InformationFirst = ({navigation}) => {
               <TextInput
                 placeholder="Enter your email"
                 placeholderTextColor={colors.lightGrey}
+                onChangeText={val => setEmail(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -132,6 +136,7 @@ const InformationFirst = ({navigation}) => {
               <TextInput
                 placeholder="John Doe"
                 placeholderTextColor={colors.lightGrey}
+                onChangeText={val => setFullName(val)}
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -170,13 +175,19 @@ const InformationFirst = ({navigation}) => {
                 iconColor="#BFBEBE"
                 placeholder="Select a job position"
                 placeholderTextColor={colors.lightGrey}
+                baseColor={colors.white}
                 data={data}
+                //backgroundColor={ 'red'}
+                containerStyle={{
+                  // borderBottomColor: colors.yellow,
+                  // borderBottomWidth: 1,
+                }}
+
                 style={{
                   width: '100%',
                   height: 44,
                   backgroundColor: 'white',
                 }}
-                baseColor="white"
               />
             </View>
 
@@ -228,7 +239,10 @@ const InformationFirst = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => navigation.navigate('InformationSecond')}
+              onPress={
+                () => navigation.navigate('InformationSecond')
+                //console.log(email, fullName, value)
+              }
               style={{
                 height: 43,
                 width: 318,

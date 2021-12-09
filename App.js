@@ -6,8 +6,8 @@ import {persistor, store} from './app/redux/store';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SplashScreen from 'react-native-splash-screen';
 
+import SplashScreen from 'react-native-splash-screen';
 import Navigation from './app/navigation/index';
 
 const App = () => {

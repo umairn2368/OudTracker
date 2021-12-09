@@ -6,6 +6,7 @@ const widthPercentageToDP = (widthPercent) => {
   const elemWidth = parseFloat(widthPercent);
   return PixelRatio.roundToNearestPixel((screenWidth * elemWidth) / 100);
 };
+
 const heightPercentageToDP = (heightPercent) => {
   const screenHeight = Dimensions.get('window').height;
   // Convert string input to decimal number

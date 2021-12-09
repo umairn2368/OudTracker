@@ -13,9 +13,10 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
-import colors from '../constants/colors';
 
+import colors from '../constants/colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
+
 const InformationThird = ({navigation}) => {
 
   const [checkOnline, setCheckOnline] = useState(false);

@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   TouchableHighlight,
 } from 'react-native';
+
 import colors from '../constants/colors';
 
 const Welcome = ({navigation}) => {

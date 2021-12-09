@@ -10,8 +10,8 @@ import {
   TouchableHighlight,
   TextInput,
 } from 'react-native';
-
 import IconSearch from 'react-native-vector-icons/AntDesign';
+
 import colors from '../constants/colors';
 
 const Register = ({navigation}) => {

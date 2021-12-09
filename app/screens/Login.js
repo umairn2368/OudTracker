@@ -12,31 +12,46 @@ import {
   KeyboardAvoidingView,
   StyleSheet,
   StatusBar,
+  ActivityIndicator,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
+import IconSearch from 'react-native-vector-icons/AntDesign';
+import EyeIcon from 'react-native-vector-icons/Feather';
 
 import {Container} from '../components/Container/container';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
-
-import IconSearch from 'react-native-vector-icons/AntDesign';
-import EyeIcon from 'react-native-vector-icons/Feather';
 import colors from '../constants/colors';
-import {useDispatch} from 'react-redux';
 import types from '../redux/types';
+import { emailRegex } from '../constants/emailRegex';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
   const [signInCheck, setSignInCheck] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
 
+  const [loading, setLoading] = useState(false);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const login = () => {
-    let user = {email: email, password: password};
-    dispatch({
-      type: types.ADD_USER,
-      user: user,
-    });
+    if (email == '') {
+      alert('Please enter email');
+    } else if (!emailRegex.test(email)) {
+      alert('Please enter valid email');
+    } else if (password == '') {
+      alert('Please enter password');
+    } else {
+      setLoading(true);
+      setTimeout(function () {
+        setLoading(false);
+        let user = {email: email, password: password};
+        dispatch({
+          type: types.ADD_USER,
+          user: user,
+        });
+      }, 2500);
+    }
   };
 
   return (
@@ -100,6 +115,7 @@ const Login = ({navigation}) => {
                 placeholder="Enter your email"
                 placeholderTextColor={colors.lightGrey}
                 onChangeText={val => setEmail(val)}
+                autoCapitalize="none"
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -238,14 +254,18 @@ const Login = ({navigation}) => {
                 alignSelf: 'center',
                 marginTop: 24,
               }}>
-              <Text
-                style={{
-                  fontWeight: '500',
-                  fontSize: 18,
-                  color: colors.white,
-                }}>
-                Log In
-              </Text>
+              {loading ? (
+                <ActivityIndicator size="small" color={colors.white} />
+              ) : (
+                <Text
+                  style={{
+                    fontWeight: '500',
+                    fontSize: 18,
+                    color: colors.white,
+                  }}>
+                  Log In
+                </Text>
+              )}
             </TouchableHighlight>
 
             <View

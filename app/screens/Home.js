@@ -4,9 +4,9 @@ import {
   Text,
   TouchableHighlight,
 } from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
 
 import colors from '../constants/colors';
-import {useSelector, useDispatch} from 'react-redux';
 
 
 const Home = () => {

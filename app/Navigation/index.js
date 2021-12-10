@@ -8,8 +8,8 @@ import DashBoard from './dashboardStack/index';
 const Stack = createNativeStackNavigator();
 
 const NavContainer = () => {
-  const user = useSelector(state => state?.auth?.user);
-  return <>{user.email && user.password ? <DashBoard /> : <Auth />}</>;
+  const isLoggedIn = useSelector(state => state?.auth?.isLoggedIn);
+  return <>{isLoggedIn ? <DashBoard /> : <Auth />}</>;
 };
 
 export default NavContainer;

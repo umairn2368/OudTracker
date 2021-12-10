@@ -22,6 +22,13 @@ import colors from '../constants/colors';
 import types from '../redux/types';
 import {emailRegex} from '../constants/emailRegex';
 
+import {
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager,
+  LoginManager,
+} from 'react-native-fbsdk';
+
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
 
@@ -30,6 +37,8 @@ const Login = ({navigation}) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loadingFB, setLoadingFB] = useState(false);
+  
 
   const login = () => {
     if (email == '') {
@@ -50,6 +59,58 @@ const Login = ({navigation}) => {
         });
       }, 2500);
     }
+  };
+
+  logoutWithFacebook = () => {
+    LoginManager.logOut();
+    // this.setState({userInfo: {}});
+  };
+
+  getInfoFromToken = token => {
+    setLoadingFB(true);
+    const PROFILE_REQUEST_PARAMS = {
+      fields: {
+        string: 'id,name,first_name,last_name',
+      },
+    };
+    const profileRequest = new GraphRequest(
+      '/me',
+      {token, parameters: PROFILE_REQUEST_PARAMS},
+      (error, user) => {
+        if (error) {
+          setLoadingFB(false);
+          console.log('login info has error: ' + error);
+        } else {
+          setLoadingFB(false);
+          console.log('result:', user);
+            dispatch({
+              type: types.ADD_USER,
+              user: user,
+            });
+        }
+      },
+    );
+    new GraphRequestManager().addRequest(profileRequest).start();
+  };
+
+  loginWithFacebook = () => {
+    setLoadingFB(true);
+    // Attempt a login using the Facebook login dialog asking for default permissions.
+    LoginManager.logInWithPermissions(['public_profile']).then(
+      login => {
+        if (login.isCancelled) {
+          console.log('Login cancelled');
+        } else {
+          AccessToken.getCurrentAccessToken().then(data => {
+            const accessToken = data.accessToken.toString();
+            this.getInfoFromToken(accessToken);
+          });
+        }
+      },
+      error => {
+        console.log('Login fail with error: ' + error);
+      },
+    );
   };
 
   return (
@@ -320,7 +381,7 @@ const Login = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => navigation.navigate('Login')}
+              onPress={() => loginWithFacebook()}
               style={{
                 height: 43,
                 width: 318,
@@ -334,6 +395,14 @@ const Login = ({navigation}) => {
                 flexDirection: 'row',
               }}>
               <>
+
+              {loadingFB ? (
+                <View style={{
+                  flex: 1,justifyContent: 'center',alignItems: 'center'}}>
+                <ActivityIndicator size="small" color={colors.green} />
+                </View>
+              ) : (
+               <>
                 <View
                   style={{
                     flex: 0.25,
@@ -355,6 +424,8 @@ const Login = ({navigation}) => {
                     Continue with Facebook
                   </Text>
                 </View>
+                </>
+              )}
               </>
             </TouchableHighlight>
           </View>

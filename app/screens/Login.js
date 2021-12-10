@@ -18,19 +18,16 @@ import {useDispatch} from 'react-redux';
 import IconSearch from 'react-native-vector-icons/AntDesign';
 import EyeIcon from 'react-native-vector-icons/Feather';
 
-import {Container} from '../components/Container/container';
-import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 import colors from '../constants/colors';
 import types from '../redux/types';
-import { emailRegex } from '../constants/emailRegex';
+import {emailRegex} from '../constants/emailRegex';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
+
   const [signInCheck, setSignInCheck] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
-
   const [loading, setLoading] = useState(false);
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -43,6 +40,7 @@ const Login = ({navigation}) => {
       alert('Please enter password');
     } else {
       setLoading(true);
+
       setTimeout(function () {
         setLoading(false);
         let user = {email: email, password: password};
@@ -58,19 +56,13 @@ const Login = ({navigation}) => {
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{flex: 1}}>
+        style={styles.container}>
         <ScrollView bounces={false} style={styles.scrollView}>
-          <View
-            style={{
-              flex: 0,
-              alignItems: 'center',
-              justifyContent: 'flex-end',
-              marginTop: 20,
-            }}>
+          <View style={styles.imageContainer}>
             <Image source={require('../assets/images/logo.png')} />
           </View>
 
-          <View style={{flex: 1}}>
+          <View style={styles.mainContainer}>
             <View
               style={{
                 marginTop: 30,
@@ -240,31 +232,12 @@ const Login = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() =>
-                //navigation.navigate('Login')
-                login()
-              }
-              style={{
-                height: 43,
-                width: 318,
-                backgroundColor: colors.green,
-                borderRadius: 5,
-                alignItems: 'center',
-                justifyContent: 'center',
-                alignSelf: 'center',
-                marginTop: 24,
-              }}>
+              onPress={() => login()}
+              style={styles.loginButtonContainer}>
               {loading ? (
                 <ActivityIndicator size="small" color={colors.white} />
               ) : (
-                <Text
-                  style={{
-                    fontWeight: '500',
-                    fontSize: 18,
-                    color: colors.white,
-                  }}>
-                  Log In
-                </Text>
+                <Text style={styles.loginButtonText}>Log In</Text>
               )}
             </TouchableHighlight>
 
@@ -399,6 +372,30 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     flex: 1,
     marginBottom: 10,
+  },
+  imageContainer: {
+    flex: 0,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginTop: 20,
+  },
+  mainContainer: {
+    flex: 1,
+  },
+  loginButtonContainer: {
+    height: 43,
+    width: 318,
+    backgroundColor: colors.green,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginTop: 24,
+  },
+  loginButtonText: {
+    fontWeight: '500',
+    fontSize: 18,
+    color: colors.white,
   },
 });
 

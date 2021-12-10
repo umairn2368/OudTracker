@@ -15,7 +15,9 @@ import IconSearch from 'react-native-vector-icons/AntDesign';
 import colors from '../constants/colors';
 
 const Register = ({navigation}) => {
+  
   const [signInCheck, setSignInCheck] = useState(false);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <View

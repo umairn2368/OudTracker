@@ -11,13 +11,13 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         data: [...action.data],
       };
-      
+
     case types.REVERT_APP:
       return {
         ...state,
         data: [],
       };
-      
+
     default:
       return state;
   }

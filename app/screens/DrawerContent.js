@@ -5,19 +5,16 @@ import {Drawer} from 'react-native-paper';
 import {useDispatch} from 'react-redux';
 
 import LogoutIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import HomeIcon from 'react-native-vector-icons/Ionicons';
-
 import SettingsIcon from 'react-native-vector-icons/Feather';
-
 import NotificationsIcon from 'react-native-vector-icons/AntDesign';
 
 import colors from '../constants/colors';
 import types from '../redux/types';
 
 const DrawerContent = props => {
-  
   const dispatch = useDispatch();
+
   const logOut = () => {
     dispatch({type: types.REVERT_AUTH});
   };

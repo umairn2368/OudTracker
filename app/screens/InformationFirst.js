@@ -178,11 +178,12 @@ const InformationFirst = ({navigation}) => {
                 baseColor={colors.white}
                 data={data}
                 //backgroundColor={ 'red'}
-                containerStyle={{
-                  // borderBottomColor: colors.yellow,
-                  // borderBottomWidth: 1,
-                }}
-
+                containerStyle={
+                  {
+                    // borderBottomColor: colors.yellow,
+                    // borderBottomWidth: 1,
+                  }
+                }
                 style={{
                   width: '100%',
                   height: 44,
@@ -239,10 +240,7 @@ const InformationFirst = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={
-                () => navigation.navigate('InformationSecond')
-                //console.log(email, fullName, value)
-              }
+              onPress={() => navigation.navigate('InformationSecond')}
               style={{
                 height: 43,
                 width: 318,

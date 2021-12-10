@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 
 const Auth = () => {
   return (
-  <Stack.Navigator
+    <Stack.Navigator
       initialRouteName="Welcome"
       headerMode="none"
       screenOptions={{headerShown: false}}>

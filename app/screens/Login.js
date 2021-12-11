@@ -22,12 +22,20 @@ import colors from '../constants/colors';
 import types from '../redux/types';
 import {emailRegex} from '../constants/emailRegex';
 
+//Facebook
 import {
   AccessToken,
   GraphRequest,
   GraphRequestManager,
   LoginManager,
 } from 'react-native-fbsdk';
+
+//Google pending
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
@@ -38,7 +46,6 @@ const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loadingFB, setLoadingFB] = useState(false);
-  
 
   const login = () => {
     if (email == '') {
@@ -63,7 +70,6 @@ const Login = ({navigation}) => {
 
   logoutWithFacebook = () => {
     LoginManager.logOut();
-    // this.setState({userInfo: {}});
   };
 
   getInfoFromToken = token => {
@@ -83,10 +89,10 @@ const Login = ({navigation}) => {
         } else {
           setLoadingFB(false);
           console.log('result:', user);
-            dispatch({
-              type: types.ADD_USER,
-              user: user,
-            });
+          dispatch({
+            type: types.ADD_USER,
+            user: user,
+          });
         }
       },
     );
@@ -395,37 +401,40 @@ const Login = ({navigation}) => {
                 flexDirection: 'row',
               }}>
               <>
-
-              {loadingFB ? (
-                <View style={{
-                  flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-                <ActivityIndicator size="small" color={colors.green} />
-                </View>
-              ) : (
-               <>
-                <View
-                  style={{
-                    flex: 0.25,
-                    alignItems: 'flex-end',
-                    paddingRight: 15,
-                  }}>
-                  <Image
-                    source={require('../assets/images/facebook.png')}
-                    style={{width: 18, height: 18}}
-                  />
-                </View>
-                <View style={{flex: 0.75}}>
-                  <Text
+                {loadingFB ? (
+                  <View
                     style={{
-                      fontWeight: '500',
-                      fontSize: 18,
-                      color: colors.darkBlue,
+                      flex: 1,
+                      justifyContent: 'center',
+                      alignItems: 'center',
                     }}>
-                    Continue with Facebook
-                  </Text>
-                </View>
-                </>
-              )}
+                    <ActivityIndicator size="small" color={colors.green} />
+                  </View>
+                ) : (
+                  <>
+                    <View
+                      style={{
+                        flex: 0.25,
+                        alignItems: 'flex-end',
+                        paddingRight: 15,
+                      }}>
+                      <Image
+                        source={require('../assets/images/facebook.png')}
+                        style={{width: 18, height: 18}}
+                      />
+                    </View>
+                    <View style={{flex: 0.75}}>
+                      <Text
+                        style={{
+                          fontWeight: '500',
+                          fontSize: 18,
+                          color: colors.darkBlue,
+                        }}>
+                        Continue with Facebook
+                      </Text>
+                    </View>
+                  </>
+                )}
               </>
             </TouchableHighlight>
           </View>

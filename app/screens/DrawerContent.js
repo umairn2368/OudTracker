@@ -12,17 +12,25 @@ import NotificationsIcon from 'react-native-vector-icons/AntDesign';
 import colors from '../constants/colors';
 import types from '../redux/types';
 
+import {
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager,
+  LoginManager,
+} from 'react-native-fbsdk';
+
 const DrawerContent = props => {
   const dispatch = useDispatch();
 
   const logOut = () => {
+    LoginManager.logOut();
     dispatch({type: types.REVERT_AUTH});
   };
 
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView {...props}>
-        <DrawerItem
+        {/* <DrawerItem
           icon={({color, size}) => (
             <HomeIcon name="md-home" color={colors.darkBlue} size={18} />
           )}
@@ -46,7 +54,7 @@ const DrawerContent = props => {
           )}
           label="Settings"
           onPress={() => alert('Settings')}
-        />
+        /> */}
       </DrawerContentScrollView>
       <Drawer.Section
         style={{

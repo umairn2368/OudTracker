@@ -1,0 +1,177 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.oudtracker"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/umairnaseer/Documents/OudTracker/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/umairnaseer/Documents/OudTracker/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/umairnaseer/.gradle/caches/transforms-3/2f5725507f1929c6ddf8255f0bef77bd/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.99.0] /Users/umairnaseer/.gradle/caches/transforms-3/2f5725507f1929c6ddf8255f0bef77bd/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+14-->[:react-native-sensitive-info] /Users/umairnaseer/Documents/OudTracker/node_modules/react-native-sensitive-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-72
+14-->[:react-native-sensitive-info] /Users/umairnaseer/Documents/OudTracker/node_modules/react-native-sensitive-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-69
+15    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+15-->[:react-native-sensitive-info] /Users/umairnaseer/Documents/OudTracker/node_modules/react-native-sensitive-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-74
+15-->[:react-native-sensitive-info] /Users/umairnaseer/Documents/OudTracker/node_modules/react-native-sensitive-info/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-71
+16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+16-->[com.android.installreferrer:installreferrer:1.0] /Users/umairnaseer/.gradle/caches/transforms-3/2e02ead2b18279aefba0fbc8bb04437a/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+16-->[com.android.installreferrer:installreferrer:1.0] /Users/umairnaseer/.gradle/caches/transforms-3/2e02ead2b18279aefba0fbc8bb04437a/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+17
+18    <application
+18-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:6:5-26:19
+19        android:name="com.oudtracker.MainApplication"
+19-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:7:7-38
+20        android:allowBackup="false"
+20-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:11:7-34
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.5.0] /Users/umairnaseer/.gradle/caches/transforms-3/5646db46e2cfb43e7b3d42f3054c498c/transformed/core-1.5.0/AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:9:7-41
+24        android:label="@string/app_name"
+24-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:8:7-39
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:10:7-52
+26        android:supportsRtl="true"
+26-->[com.facebook.android:facebook-android-sdk:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/c87403d1bebf4c02a3cb2a3d799e2336/transformed/jetified-facebook-android-sdk-12.2.0/AndroidManifest.xml:28:18-44
+27        android:theme="@style/AppTheme"
+27-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:12:7-38
+28        android:usesCleartextTraffic="true" >
+28-->/Users/umairnaseer/Documents/OudTracker/android/app/src/debug/AndroidManifest.xml:8:9-44
+29        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+29-->/Users/umairnaseer/Documents/OudTracker/android/app/src/debug/AndroidManifest.xml:11:9-86
+29-->/Users/umairnaseer/Documents/OudTracker/android/app/src/debug/AndroidManifest.xml:11:19-83
+30        <activity
+30-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:13:7-23:18
+31            android:name="com.oudtracker.MainActivity"
+31-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:14:9-37
+32            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+32-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:16:9-86
+33            android:label="@string/app_name"
+33-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:15:9-41
+34            android:launchMode="singleTask"
+34-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:17:9-40
+35            android:windowSoftInputMode="adjustResize" >
+35-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:18:9-51
+36            <intent-filter>
+36-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:19:9-22:25
+37                <action android:name="android.intent.action.MAIN" />
+37-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:20:13-65
+37-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:20:21-62
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:21:13-73
+39-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:21:23-70
+40            </intent-filter>
+41        </activity>
+42
+43        <meta-data
+43-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:25:9-118
+44            android:name="com.facebook.sdk.ApplicationId"
+44-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:25:20-65
+45            android:value="@string/facebook_app_id" />
+45-->/Users/umairnaseer/Documents/OudTracker/android/app/src/main/AndroidManifest.xml:25:66-105
+46
+47        <activity
+47-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:30:9-33:66
+48            android:name="com.facebook.FacebookActivity"
+48-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:31:13-57
+49            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+49-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:32:13-96
+50            android:theme="@style/com_facebook_activity_theme" />
+50-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:33:13-63
+51        <activity android:name="com.facebook.CustomTabMainActivity" />
+51-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:34:9-71
+51-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:34:19-68
+52        <activity
+52-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:35:9-49:20
+53            android:name="com.facebook.CustomTabActivity"
+53-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:36:13-58
+54            android:exported="true" >
+54-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:37:13-36
+55            <intent-filter>
+55-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:39:13-48:29
+56                <action android:name="android.intent.action.VIEW" />
+56-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:40:17-69
+56-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:40:25-66
+57
+58                <category android:name="android.intent.category.DEFAULT" />
+58-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:42:17-76
+58-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:42:27-73
+59                <category android:name="android.intent.category.BROWSABLE" />
+59-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:43:17-78
+59-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:43:27-75
+60
+61                <data
+61-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:45:17-47:50
+62                    android:host="cct.com.oudtracker"
+62-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:46:21-56
+63                    android:scheme="fbconnect" />
+63-->[com.facebook.android:facebook-common:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/82b64affb57c95259e6c34f11a7e1151/transformed/jetified-facebook-common-12.2.0/AndroidManifest.xml:47:21-47
+64            </intent-filter>
+65        </activity>
+66        <activity
+66-->[androidx.biometric:biometric:1.0.1] /Users/umairnaseer/.gradle/caches/transforms-3/6fe2c6813f49ded38c90372f315a6bbe/transformed/biometric-1.0.1/AndroidManifest.xml:28:9-31:67
+67            android:name="androidx.biometric.DeviceCredentialHandlerActivity"
+67-->[androidx.biometric:biometric:1.0.1] /Users/umairnaseer/.gradle/caches/transforms-3/6fe2c6813f49ded38c90372f315a6bbe/transformed/biometric-1.0.1/AndroidManifest.xml:29:13-78
+68            android:exported="true"
+68-->[androidx.biometric:biometric:1.0.1] /Users/umairnaseer/.gradle/caches/transforms-3/6fe2c6813f49ded38c90372f315a6bbe/transformed/biometric-1.0.1/AndroidManifest.xml:30:13-36
+69            android:theme="@style/DeviceCredentialHandlerTheme" />
+69-->[androidx.biometric:biometric:1.0.1] /Users/umairnaseer/.gradle/caches/transforms-3/6fe2c6813f49ded38c90372f315a6bbe/transformed/biometric-1.0.1/AndroidManifest.xml:31:13-64
+70        <!--
+71         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+72         with the application context. This config is merged in with the host app's manifest,
+73         but there can only be one provider with the same authority activated at any given
+74         point; so if the end user has two or more different apps that use Facebook SDK, only the
+75         first one will be able to use the provider. To work around this problem, we use the
+76         following placeholder in the authority to identify each host application as if it was
+77         a completely different provider.
+78        -->
+79        <provider
+79-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:39:9-42:40
+80            android:name="com.facebook.internal.FacebookInitProvider"
+80-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:40:13-70
+81            android:authorities="com.oudtracker.FacebookInitProvider"
+81-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:41:13-72
+82            android:exported="false" />
+82-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:42:13-37
+83
+84        <receiver
+84-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:44:9-50:20
+85            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+85-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:45:13-86
+86            android:exported="false" >
+86-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:46:13-37
+87            <intent-filter>
+87-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:47:13-49:29
+88                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+88-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:48:17-95
+88-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:48:25-92
+89            </intent-filter>
+90        </receiver>
+91        <receiver
+91-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:51:9-57:20
+92            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+92-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:52:13-118
+93            android:exported="false" >
+93-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:53:13-37
+94            <intent-filter>
+94-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:54:13-56:29
+95                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+95-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:55:17-103
+95-->[com.facebook.android:facebook-core:12.2.0] /Users/umairnaseer/.gradle/caches/transforms-3/7ded0dee7b360195f459c559a1c8198c/transformed/jetified-facebook-core-12.2.0/AndroidManifest.xml:55:25-100
+96            </intent-filter>
+97        </receiver>
+98    </application>
+99
+100</manifest>

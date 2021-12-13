@@ -179,12 +179,14 @@ const InformationSecond = ({navigation}) => {
 
             <View
               style={{
+                flex: 1,
                 width: '84%',
                 marginTop: 6,
                 alignSelf: 'center',
                 borderWidth: 1,
                 borderColor: colors.lightGrey,
                 borderRadius: 5,
+                padding: 2,
               }}>
               <Dropdown
                 icon="chevron-down"
@@ -192,6 +194,7 @@ const InformationSecond = ({navigation}) => {
                 placeholder="Chose your company name"
                 placeholderTextColor={colors.lightGrey}
                 data={data}
+                underlineColor='transparent'
                 style={{
                   width: '100%',
                   height: 44,
@@ -319,12 +322,14 @@ const InformationSecond = ({navigation}) => {
 
                 <View
                   style={{
+                    flex: 1,
                     width: '84%',
                     marginTop: 6,
                     alignSelf: 'center',
                     borderWidth: 1,
                     borderColor: colors.lightGrey,
                     borderRadius: 5,
+                    padding: 2,
                   }}>
                   <Dropdown
                     icon="chevron-down"
@@ -332,6 +337,7 @@ const InformationSecond = ({navigation}) => {
                     placeholder="Company service"
                     placeholderTextColor={colors.lightGrey}
                     data={data2}
+                underlineColor='transparent'
                     style={{
                       width: '100%',
                       height: 44,

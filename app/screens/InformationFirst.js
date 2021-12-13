@@ -163,12 +163,14 @@ const InformationFirst = ({navigation}) => {
 
             <View
               style={{
+                flex: 1,
                 width: '84%',
                 marginTop: 6,
                 alignSelf: 'center',
                 borderWidth: 1,
                 borderColor: colors.lightGrey,
                 borderRadius: 5,
+                padding: 2,
               }}>
               <Dropdown
                 icon="chevron-down"
@@ -177,17 +179,14 @@ const InformationFirst = ({navigation}) => {
                 placeholderTextColor={colors.lightGrey}
                 baseColor={colors.white}
                 data={data}
-                //backgroundColor={ 'red'}
-                containerStyle={
-                  {
-                    // borderBottomColor: colors.yellow,
-                    // borderBottomWidth: 1,
-                  }
-                }
+                underlineColor="transparent"
+                containerStyle={{}}
                 style={{
                   width: '100%',
-                  height: 44,
+                  height: 43,
                   backgroundColor: 'white',
+                  fontSize: 13,
+                  fontWeight: '500',
                 }}
               />
             </View>

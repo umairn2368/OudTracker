@@ -14,6 +14,7 @@
 		2007405238C300C0D8234CF9 /* libPods-OudTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46853A7C5404C5F5CBDDC8E4 /* libPods-OudTracker.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BDCAE3F3A63838019888CBB8 /* libPods-OudTracker-OudTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF500E363B954787AC5BA78E /* libPods-OudTracker-OudTrackerTests.a */; };
+		CA68BC1B2767549E0015A000 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA68BC1A2767549E0015A000 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		495B466CF6AA5AC81F7B701C /* Pods-OudTracker-OudTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OudTracker-OudTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-OudTracker-OudTrackerTests/Pods-OudTracker-OudTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = OudTracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A733333240670DD4DC96D5A0 /* Pods-OudTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OudTracker.debug.xcconfig"; path = "Target Support Files/Pods-OudTracker/Pods-OudTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		CA68BC1A2767549E0015A000 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAE4626E2754C56B00A49237 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		CAE4626F2754C56B00A49237 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		CAE462702754C56B00A49237 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		13B07FAE1A68108700A75B9A /* OudTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CA68BC1A2767549E0015A000 /* GoogleService-Info.plist */,
 				CAE4626D2754C50D00A49237 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -160,7 +163,6 @@
 			children = (
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		CAE4626D2754C50D00A49237 /* Fonts */ = {
@@ -293,6 +295,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CA68BC1B2767549E0015A000 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

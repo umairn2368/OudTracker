@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "811590839213",
+    "project_id": "oudtracker-335010",
+    "storage_bucket": "oudtracker-335010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811590839213:android:a1e4d64a4b24cf194f8f24",
+        "android_client_info": {
+          "package_name": "com.oudtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811590839213-bkpcfepaitccup4c8qb802kc4pe3d52j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oudtracker",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "811590839213-6va43voqjmropt7pil5k7tcm5r4fo7ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpxlxdKPwrFLFD0FcSaA_Ua3NBGTJN7p8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811590839213-6va43voqjmropt7pil5k7tcm5r4fo7ek.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "811590839213-i2s9b6s557q0o79ii4umv37igdb8eutl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.OudTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

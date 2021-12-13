@@ -37,6 +37,13 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
+GoogleSignin.configure({
+  //iosClientId : '811590839213-nnml5log03o8gc4gmaj7888dsokd61kp.apps.googleusercontent.com',
+  webClientId:
+    '811590839213-nnml5log03o8gc4gmaj7888dsokd61kp.apps.googleusercontent.com',
+  offlineAccess: true,
+});
+
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
 
@@ -45,7 +52,9 @@ const Login = ({navigation}) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const [loadingFB, setLoadingFB] = useState(false);
+  const [loadingGoogle, setLoadingGoogle] = useState(false);
 
   const login = () => {
     if (email == '') {
@@ -68,8 +77,42 @@ const Login = ({navigation}) => {
     }
   };
 
-  logoutWithFacebook = () => {
-    LoginManager.logOut();
+  const loginWithGoogle = async () => {
+    setLoadingGoogle(true);
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      setLoadingGoogle(false);
+      console.log(JSON.stringify(userInfo));
+
+      dispatch({
+        type: types.ADD_USER,
+        user: JSON.stringify(userInfo),
+      });
+    } catch (error) {
+      setLoadingGoogle(false);
+      console.log(error.message);
+    }
+  };
+
+  loginWithFacebook = () => {
+    setLoadingFB(true);
+    // Attempt a login using the Facebook login dialog asking for default permissions.
+    LoginManager.logInWithPermissions(['public_profile']).then(
+      login => {
+        if (login.isCancelled) {
+          console.log('Login cancelled');
+        } else {
+          AccessToken.getCurrentAccessToken().then(data => {
+            const accessToken = data.accessToken.toString();
+            this.getInfoFromToken(accessToken);
+          });
+        }
+      },
+      error => {
+        console.log('Login fail with error: ' + error);
+      },
+    );
   };
 
   getInfoFromToken = token => {
@@ -97,26 +140,6 @@ const Login = ({navigation}) => {
       },
     );
     new GraphRequestManager().addRequest(profileRequest).start();
-  };
-
-  loginWithFacebook = () => {
-    setLoadingFB(true);
-    // Attempt a login using the Facebook login dialog asking for default permissions.
-    LoginManager.logInWithPermissions(['public_profile']).then(
-      login => {
-        if (login.isCancelled) {
-          console.log('Login cancelled');
-        } else {
-          AccessToken.getCurrentAccessToken().then(data => {
-            const accessToken = data.accessToken.toString();
-            this.getInfoFromToken(accessToken);
-          });
-        }
-      },
-      error => {
-        console.log('Login fail with error: ' + error);
-      },
-    );
   };
 
   return (
@@ -347,7 +370,7 @@ const Login = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => navigation.navigate('Login')}
+              onPress={() => loginWithGoogle()}
               style={{
                 height: 43,
                 width: 318,
@@ -361,27 +384,40 @@ const Login = ({navigation}) => {
                 flexDirection: 'row',
               }}>
               <>
-                <View
-                  style={{
-                    flex: 0.25,
-                    alignItems: 'flex-end',
-                    paddingRight: 15,
-                  }}>
-                  <Image
-                    source={require('../assets/images/google.png')}
-                    style={{width: 18, height: 18}}
-                  />
-                </View>
-                <View style={{flex: 0.75}}>
-                  <Text
+                {loadingGoogle ? (
+                  <View
                     style={{
-                      fontWeight: '500',
-                      fontSize: 18,
-                      color: colors.darkBlue,
+                      flex: 1,
+                      justifyContent: 'center',
+                      alignItems: 'center',
                     }}>
-                    Continue with Google
-                  </Text>
-                </View>
+                    <ActivityIndicator size="small" color={colors.green} />
+                  </View>
+                ) : (
+                  <>
+                    <View
+                      style={{
+                        flex: 0.25,
+                        alignItems: 'flex-end',
+                        paddingRight: 15,
+                      }}>
+                      <Image
+                        source={require('../assets/images/google.png')}
+                        style={{width: 18, height: 18}}
+                      />
+                    </View>
+                    <View style={{flex: 0.75}}>
+                      <Text
+                        style={{
+                          fontWeight: '500',
+                          fontSize: 18,
+                          color: colors.darkBlue,
+                        }}>
+                        Continue with Google
+                      </Text>
+                    </View>
+                  </>
+                )}
               </>
             </TouchableHighlight>
 

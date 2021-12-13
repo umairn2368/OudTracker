@@ -19,11 +19,19 @@ import {
   LoginManager,
 } from 'react-native-fbsdk';
 
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+
 const DrawerContent = props => {
   const dispatch = useDispatch();
 
-  const logOut = () => {
+  const logOut = async () => {
     LoginManager.logOut();
+
+    await GoogleSignin.signOut();
     dispatch({type: types.REVERT_AUTH});
   };
 

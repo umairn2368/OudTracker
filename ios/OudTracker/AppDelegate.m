@@ -25,7 +25,7 @@ static void InitializeFlipper(UIApplication *application) {
   [client start];
 }
 #endif
-
+@import Firebase;
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -53,6 +53,7 @@ static void InitializeFlipper(UIApplication *application) {
   [RNSplashScreen show];
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
+  [FIRApp configure];
   return YES;
 }
 

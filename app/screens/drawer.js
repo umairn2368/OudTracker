@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import DashBoard from './Home';
 import DrawerContent from './DrawerContent';
+import colors from '../constants/colors';
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigationClass() {
@@ -13,7 +14,7 @@ export default function DrawerNavigationClass() {
       initialRouteName="DashBoard"
       headerMode="none"
       screenOptions={{
-        headerTintColor: '#F2C534',
+        headerTintColor: colors.green,
         headerTitle: '',
       }}
       drawerContent={props => <DrawerContent {...props} />}>

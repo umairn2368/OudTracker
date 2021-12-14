@@ -17,28 +17,24 @@ import {
 import {useDispatch} from 'react-redux';
 import IconSearch from 'react-native-vector-icons/AntDesign';
 import EyeIcon from 'react-native-vector-icons/Feather';
-
-import colors from '../constants/colors';
-import types from '../redux/types';
-import {emailRegex} from '../constants/emailRegex';
-
-//Facebook
 import {
   AccessToken,
   GraphRequest,
   GraphRequestManager,
   LoginManager,
 } from 'react-native-fbsdk';
-
-//Google pending
 import {
   GoogleSignin,
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
+import colors from '../constants/colors';
+import types from '../redux/types';
+import {emailRegex} from '../constants/emailRegex';
+import Api from '../api';
+
 GoogleSignin.configure({
-  //iosClientId : '811590839213-nnml5log03o8gc4gmaj7888dsokd61kp.apps.googleusercontent.com',
   webClientId:
     '811590839213-nnml5log03o8gc4gmaj7888dsokd61kp.apps.googleusercontent.com',
   offlineAccess: true,
@@ -56,7 +52,7 @@ const Login = ({navigation}) => {
   const [loadingFB, setLoadingFB] = useState(false);
   const [loadingGoogle, setLoadingGoogle] = useState(false);
 
-  const login = () => {
+  const login = async () => {
     if (email == '') {
       alert('Please enter email');
     } else if (!emailRegex.test(email)) {
@@ -64,16 +60,32 @@ const Login = ({navigation}) => {
     } else if (password == '') {
       alert('Please enter password');
     } else {
-      setLoading(true);
+       setLoading(true);
+      //   setTimeout(function () {
+      //     setLoading(false);
+      //     let user = {email: email, password: password};
+      //     dispatch({
+      //       type: types.ADD_USER,
+      //       user: user,
+      //     });
+      //   }, 2500);
+      // }
 
-      setTimeout(function () {
-        setLoading(false);
-        let user = {email: email, password: password};
+      let data = new FormData();
+      data.append('email', email);
+      data.append('password', password);
+      try {
+        let res = await Api.post('/login', data);
+        console.log('User login api response', res);
         dispatch({
           type: types.ADD_USER,
-          user: user,
+          user: res,
         });
-      }, 2500);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        console.log(error);
+      }
     }
   };
 
@@ -102,11 +114,13 @@ const Login = ({navigation}) => {
       login => {
         if (login.isCancelled) {
           console.log('Login cancelled');
+          setLoadingFB(false);
         } else {
           AccessToken.getCurrentAccessToken().then(data => {
             const accessToken = data.accessToken.toString();
             this.getInfoFromToken(accessToken);
           });
+          setLoadingFB(false);
         }
       },
       error => {

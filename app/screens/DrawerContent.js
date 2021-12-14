@@ -29,9 +29,8 @@ const DrawerContent = props => {
   const dispatch = useDispatch();
 
   const logOut = async () => {
-    LoginManager.logOut();
-
     await GoogleSignin.signOut();
+    LoginManager.logOut();
     dispatch({type: types.REVERT_AUTH});
   };
 
@@ -75,6 +74,7 @@ const DrawerContent = props => {
             <LogoutIcon name="logout" color={colors.darkBlue} size={18} />
           )}
           label="Sign Out"
+          labelStyle={{color: colors.darkBlue}}
           onPress={() => {
             logOut();
           }}

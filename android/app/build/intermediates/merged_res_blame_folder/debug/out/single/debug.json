@@ -1,15 +1,71 @@
 [
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_fourthinformationpic.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_fourthinformationpic.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_luanch_screen.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxhdpi/luanch_screen.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_facebook.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_facebook.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_firstinformationpic.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_firstinformationpic.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativecountrypickermodal_lib_assets_images_closeios.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnativecountrypickermodal_lib_assets_images_closeios.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_google.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_google.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     },
     {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_luanch_screen.png.flat",
@@ -24,12 +80,28 @@
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_luanch_screen.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxhdpi/luanch_screen.png"
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_thirdinformationpic.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_thirdinformationpic.png"
     },
     {
-        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_secondinformationpic.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_secondinformationpic.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-hdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     },
     {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
@@ -40,6 +112,10 @@
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativecountrypickermodal_lib_assets_images_close.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnativecountrypickermodal_lib_assets_images_close.png"
+    },
+    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/layout_launch_screen.xml.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/layout/launch_screen.xml"
     },
@@ -48,7 +124,15 @@
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_app_assets_images_logo.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/app_assets_images_logo.png"
+    },
+    {
         "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/umairnaseer/Documents/OudTracker/android/app/build/intermediates/res/merged/debug/drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "/Users/umairnaseer/Documents/OudTracker/android/app/src/main/res/drawable-mdpi/node_modules_reactnativepaper_src_assets_backchevron.png"
     }
 ]

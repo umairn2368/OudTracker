@@ -14,7 +14,7 @@ export default function DrawerNavigationClass() {
       initialRouteName="DashBoard"
       headerMode="none"
       screenOptions={{
-        headerTintColor: colors.green,
+        headerTintColor: colors.darkBlue,
         headerTitle: '',
       }}
       drawerContent={props => <DrawerContent {...props} />}>

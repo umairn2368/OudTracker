@@ -1,5 +1,5 @@
 const dev = {
-  api: 'https://xyz.com/izero/api/'
+  api: 'https://obstechnologia.com/oudTracker/api'
 };
 
 export {dev};

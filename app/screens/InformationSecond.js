@@ -18,40 +18,95 @@ import PhoneInput from 'react-native-phone-number-input';
 import colors from '../constants/colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 
-const InformationSecond = ({navigation}) => {
+const InformationSecond = ({navigation, route}) => {
+  let routeData = route?.params;
+
   let data = [
     {
-      value: 'One',
+      label: '1',
+      value: '1',
     },
     {
-      value: 'Two',
+      label: '2',
+      value: '2',
     },
     {
-      value: 'Three',
+      label: '3',
+      value: '3',
     },
     {
-      value: 'Four',
+      label: '4',
+      value: '4',
+    },
+    {
+      label: '5',
+      value: '5',
     },
   ];
 
   let data2 = [
     {
-      value: 'Test One',
+      label: 'Company Service One',
+      value: 'Company Service One',
     },
     {
-      value: 'Test Two',
+      label: 'Company Service Two',
+      value: 'Company Service Two',
     },
     {
-      value: 'Test Three',
+      label: 'Company Service Three',
+      value: 'Company Service Three',
     },
     {
-      value: 'Test Four',
+      label: 'Company Service Four',
+      value: 'Company Service Four',
+    },
+    {
+      label: 'Company Service Five',
+      value: 'Company Service Five',
     },
   ];
 
   const [checkAgencyYes, setCheckAgencyYes] = useState(false);
-
   const [checkAgencyNo, setCheckAgencyNo] = useState(false);
+
+  const [companyName, setCompanyName] = useState('');
+  const [companySize, setCompanySize] = useState('');
+  const [serviceProvide, setServiceProvide] = useState('');
+
+  const nextStep = async () => {
+    if (companyName == '') {
+      alert('Please enter company name');
+    } else if (companySize == '') {
+      alert('Please select company size');
+    } else if (checkAgencyYes == true) {
+      if (serviceProvide == '') {
+        alert('Please select service provide');
+      } else {
+        navigation.navigate('InformationThird', {
+          fullName: routeData.fullName,
+          position: routeData.position,
+          phoneNumber: routeData.phoneNumber,
+          email: routeData.email,
+          password: routeData?.password,
+          companyName: companyName,
+          companySize: companySize,
+          serviceProvide: serviceProvide,
+          checkAgencyYes: checkAgencyYes
+        });
+      }
+    } else {
+      navigation.navigate('InformationThird', {
+        fullName: routeData.fullName,
+        position: routeData.position,
+        phoneNumber: routeData.phoneNumber,
+        email: routeData.email,
+        companyName: companyName,
+        companySize: companySize,
+        serviceProvide: serviceProvide,
+      });
+    }
+  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -125,40 +180,14 @@ const InformationSecond = ({navigation}) => {
               <TextInput
                 placeholder="Enter your company name"
                 placeholderTextColor={colors.lightGrey}
+                onChangeText={val => setCompanyName(val)}
+                keyboardType="default"
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
                   borderWidth: 1,
                   borderColor: colors.lightGrey,
                   borderRadius: 5,
-                  color: colors.black,
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                }}
-              />
-            </View>
-
-            <Text
-              style={{
-                fontWeight: '500',
-                fontSize: 14,
-                marginTop: 9,
-                marginLeft: 36,
-                color: colors.darkBlue,
-              }}>
-              Full Name
-            </Text>
-
-            <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
-              <TextInput
-                placeholder="John Doe"
-                placeholderTextColor={colors.lightGrey}
-                style={{
-                  height: 44,
-                  backgroundColor: colors.white,
-                  borderWidth: 1,
-                  borderRadius: 5,
-                  borderColor: colors.lightGrey,
                   color: colors.black,
                   paddingLeft: 10,
                   paddingRight: 10,
@@ -191,10 +220,13 @@ const InformationSecond = ({navigation}) => {
               <Dropdown
                 icon="chevron-down"
                 iconColor="#BFBEBE"
-                placeholder="Chose your company name"
+                placeholder="Chose your company size"
                 placeholderTextColor={colors.lightGrey}
                 data={data}
-                underlineColor='transparent'
+                onChangeText={item => {
+                  setCompanySize(item);
+                }}
+                underlineColor="transparent"
                 style={{
                   width: '100%',
                   height: 44,
@@ -337,7 +369,10 @@ const InformationSecond = ({navigation}) => {
                     placeholder="Company service"
                     placeholderTextColor={colors.lightGrey}
                     data={data2}
-                underlineColor='transparent'
+                    onChangeText={item => {
+                      setServiceProvide(item);
+                    }}
+                    underlineColor="transparent"
                     style={{
                       width: '100%',
                       height: 44,
@@ -351,7 +386,7 @@ const InformationSecond = ({navigation}) => {
 
             <TouchableHighlight
               underlayColor=""
-              onPress={() => navigation.navigate('InformationThird')}
+              onPress={() => nextStep()}
               style={{
                 height: 43,
                 width: 318,

@@ -11,14 +11,25 @@ import {
   TextInput,
   StyleSheet,
   KeyboardAvoidingView,
+  Modal,
+  ActivityIndicator,
 } from 'react-native';
 import {Dropdown} from 'react-native-material-dropdown-v2-fixed';
 import PhoneInput from 'react-native-phone-number-input';
 
+import {useDispatch} from 'react-redux';
+
 import colors from '../constants/colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
+import Api from '../api';
 
-const InformationFourth = ({navigation}) => {
+import types from '../redux/types';
+
+const InformationFourth = ({navigation, route}) => {
+
+  const dispatch = useDispatch();
+  let routeData = route?.params;
+
   const [customAlert, setCustomAlert] = useState(false);
   const [unlimitedSocial, setUnlimitedSocial] = useState(false);
   const [unlimited, setUnlimited] = useState(false);
@@ -28,6 +39,47 @@ const InformationFourth = ({navigation}) => {
   const [checkBrandManagement, setCheckBrandManagement] = useState(false);
   const [checkSocailMediaMarketing, setCheckSocailMediaMarketing] =
     useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  const registration = async () => {
+    setLoading(true);
+
+    let data = new FormData();
+    data.append('name', routeData?.fullName);
+    data.append('email', routeData?.email);
+    data.append('password', routeData?.password);
+    data.append('gender', 'Male');
+    data.append('country_code', '+92');
+    data.append('phone', routeData?.phoneNumber);
+    data.append('hobbies', '');
+    data.append('religion', '');
+    data.append('profession', routeData?.position);
+    data.append('company_name', routeData?.companyName);
+    data.append('company_size', routeData?.companySize);
+    data.append('custom_alert', customAlert);
+    data.append('unlimited_social', unlimitedSocial);
+    data.append('unlimited', unlimited);
+    data.append('primary_plan', '');
+    data.append('are_you_agency', routeData?.checkAgencyYes);
+    data.append('services', routeData?.serviceProvide);
+    data.append('what_brought_you_here', routeData?.whereWeBroughtYou);
+    console.log({data});
+
+
+    try {
+      let res = await Api.post('/signup', data);
+      console.log('User signup api response', res);
+      dispatch({
+        type: types.ADD_USER,
+        user: res?.data?.data,
+      });
+      setLoading(false);
+    } catch (error) {
+      console.log({error});
+      setLoading(false);
+    }
+  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -432,6 +484,39 @@ const InformationFourth = ({navigation}) => {
               </Text>
             </View>
           </View>
+        </View>
+
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 20,
+            marginTop: 20,
+          }}>
+          <TouchableHighlight
+            underlayColor=""
+            onPress={() => registration()}
+            style={{
+              height: 43,
+              width: 318,
+              backgroundColor: colors.green,
+              borderRadius: 5,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            {loading ? (
+              <ActivityIndicator size="small" color={colors.white} />
+            ) : (
+              <Text
+                style={{
+                  fontWeight: '500',
+                  fontSize: 18,
+                  color: colors.white,
+                }}>
+                Register
+              </Text>
+            )}
+          </TouchableHighlight>
         </View>
       </ScrollView>
     </SafeAreaView>

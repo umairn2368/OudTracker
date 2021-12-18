@@ -1,9 +1,8 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import {View, Text, TouchableHighlight} from 'react-native';
+import {View, Text, TouchableHighlight, Image, LogBox} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Drawer} from 'react-native-paper';
-import {useDispatch} from 'react-redux';
-
+import {useDispatch, useSelector} from 'react-redux';
 import LogoutIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeIcon from 'react-native-vector-icons/Ionicons';
 import SettingsIcon from 'react-native-vector-icons/Feather';
@@ -27,6 +26,9 @@ import {
 
 const DrawerContent = props => {
   const dispatch = useDispatch();
+  
+  const user = useSelector(state => state?.auth?.user);
+  console.log('user', user);
 
   const logOut = async () => {
     await GoogleSignin.signOut();
@@ -36,7 +38,67 @@ const DrawerContent = props => {
 
   return (
     <View style={{flex: 1}}>
-      <DrawerContentScrollView {...props}>
+      <DrawerContentScrollView {...props} bounces={false}>
+        <View
+          style={{
+            flex: 1,
+          }}>
+          {/* <View
+            style={{
+              paddingRight: 20,
+              paddingLeft: 20,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image
+              style={{width: '100%', height: '50%'}}
+              source={require('../assets/images/logo.png')}
+            />
+          </View> */}
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderBottomWidth: 0.5,
+              borderBottomColor: colors.darkGrey,
+            }}>
+            {user?.photo ? (
+              <Image
+                source={{
+                  uri: user?.photo,
+                }}
+                style={{width: 100, height: 100, borderRadius: 100}}
+              />
+            ) : user?.picture ? (
+              <Image
+                source={{
+                  uri: `${user?.picture?.data?.url}`,
+                }}
+                style={{width: 100, height: 100, borderRadius: 100}}
+              />
+            ) : (
+              <Image
+                style={{
+                  width: '100%',
+                  height: '50%',
+                  paddingTop: 30,
+                  paddingBottom: 30,
+                }}
+                source={require('../assets/images/logo.png')}
+              />
+            )}
+            <Text
+              style={{
+                paddingTop: 20,
+                fontSize: 22,
+                fontWeight: 'bold',
+                color: colors.darkBlue,
+                paddingBottom: 20,
+              }}>
+              {user?.name}
+            </Text>
+          </View>
+        </View>
         {/* <DrawerItem
           icon={({color, size}) => (
             <HomeIcon name="md-home" color={colors.darkBlue} size={18} />

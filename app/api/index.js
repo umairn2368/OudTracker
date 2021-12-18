@@ -1,9 +1,9 @@
-import axios from 'react-native-axios';
+import axios from 'axios';
 import {dev} from '../constants/environment';
 
 const Api = axios.create({
   baseURL: dev.api,
-  timeout: 10000,
+  timeout: 5000,
 });
 
 export default Api;

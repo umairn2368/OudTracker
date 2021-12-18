@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">811590839213-6va43voqjmropt7pil5k7tcm5r4fo7ek.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">811590839213</string>
+    <string name="google_api_key" translatable="false">AIzaSyBpxlxdKPwrFLFD0FcSaA_Ua3NBGTJN7p8</string>
+    <string name="google_app_id" translatable="false">1:811590839213:android:a1e4d64a4b24cf194f8f24</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBpxlxdKPwrFLFD0FcSaA_Ua3NBGTJN7p8</string>
+    <string name="google_storage_bucket" translatable="false">oudtracker-335010.appspot.com</string>
+    <string name="project_id" translatable="false">oudtracker-335010</string>
+</resources>

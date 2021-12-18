@@ -9,17 +9,47 @@ import {
   SafeAreaView,
   TouchableHighlight,
   TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
 } from 'react-native';
+
 import IconSearch from 'react-native-vector-icons/AntDesign';
 
 import colors from '../constants/colors';
+import {emailRegex} from '../constants/emailRegex';
 
 const Register = ({navigation}) => {
-  
   const [signInCheck, setSignInCheck] = useState(false);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [showPassword, setShowPassword] = useState(true);
+
+  const createAccountFirst = async () => {
+    if (email == '') {
+      alert('Please enter email');
+    } else if (!emailRegex.test(email)) {
+      alert('Please enter valid email');
+    } else if (password == '') {
+      alert('Please enter password');
+    }
+    else {
+      navigation.navigate('InformationFirst'
+      , {
+        email: email,
+        password: password,
+      }
+      );
+    }
+  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{flex: 1}}>
+        <ScrollView bounces={false} style={styles.scrollView}>
       <View
         style={{
           flex: 0,
@@ -67,8 +97,42 @@ const Register = ({navigation}) => {
 
         <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
           <TextInput
-            placeholder="Enter your email"
-            placeholderTextColor="#BFBEBE"
+             placeholder="Enter your email"
+             placeholderTextColor={colors.lightGrey}
+             onChangeText={val => setEmail(val)}
+             autoCapitalize="none"
+             keyboardType="email-address"
+            style={{
+              height: 44,
+              backgroundColor: '#FFFFFF',
+              borderWidth: 1,
+              borderColor: '#BFBEBE',
+              borderRadius: 5,
+              color: 'black',
+              paddingLeft: 10,
+              paddingRight: 10,
+            }}
+          />
+        </View>
+
+        <Text
+          style={{
+            fontWeight: '500',
+            fontSize: 14,
+            marginTop: 16,
+            marginLeft: 36,
+            color: '#25414C',
+          }}>
+          Password
+        </Text>
+
+        <View style={{marginLeft: 29, marginRight: 29, marginTop: 6}}>
+          <TextInput
+           placeholder="Enter your password"
+           placeholderTextColor={colors.lightGrey}
+            secureTextEntry={showPassword}
+            keyboardType="default"
+           onChangeText={val => setPassword(val)}
             style={{
               height: 44,
               backgroundColor: '#FFFFFF',
@@ -164,7 +228,7 @@ const Register = ({navigation}) => {
         <TouchableHighlight
           underlayColor=""
           disabled={signInCheck ? false : true}
-          onPress={() => navigation.navigate('InformationFirst')}
+          onPress={() => createAccountFirst()}
           style={{
             height: 43,
             width: 318,
@@ -187,8 +251,22 @@ const Register = ({navigation}) => {
           </Text>
         </TouchableHighlight>
       </View>
+      </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  scrollView: {
+    backgroundColor: colors.white,
+    flex: 1,
+    marginBottom: 10,
+  },
+});
 
 export default Register;

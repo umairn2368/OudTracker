@@ -17,13 +17,31 @@ import PhoneInput from 'react-native-phone-number-input';
 import colors from '../constants/colors';
 import {heightPercentageToDP, widthPercentageToDP} from '../helper/Responsive';
 
-const InformationThird = ({navigation}) => {
+const InformationThird = ({navigation, route}) => {
+  let routeData = route?.params;
 
   const [checkOnline, setCheckOnline] = useState(false);
   const [checkMediaListening, setCheckMediaListening] = useState(false);
   const [checkBrandManagement, setCheckBrandManagement] = useState(false);
   const [checkSocailMediaMarketing, setCheckSocailMediaMarketing] =
     useState(false);
+    const [whereWeBroughtYou, setWhereWeBroughtYou] = useState('');
+
+
+  const nextStep = async () => {
+    navigation.navigate('InformationFourth', {
+      fullName: routeData.fullName,
+      position: routeData.position,
+      phoneNumber: routeData.phoneNumber,
+      email: routeData.email,
+      password: routeData?.password,
+      companyName: routeData.companyName,
+      companySize: routeData.companySize,
+      serviceProvide: routeData.serviceProvide,
+      checkAgencyYes: routeData?.checkAgencyYes,
+      whereWeBroughtYou: whereWeBroughtYou,
+    });
+  };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
@@ -85,7 +103,7 @@ const InformationThird = ({navigation}) => {
 
           <TouchableHighlight
             underlayColor=""
-            onPress={() => navigation.navigate('InformationFourth')}
+            onPress={() => nextStep()}
             style={{
               marginTop: 20,
               marginLeft: 20,
@@ -108,6 +126,7 @@ const InformationThird = ({navigation}) => {
                       setCheckMediaListening(false),
                       setCheckBrandManagement(false),
                       setCheckSocailMediaMarketing(false);
+                      setWhereWeBroughtYou('online_media_monitoring');
                   }}>
                   {checkOnline ? (
                     <View
@@ -165,7 +184,7 @@ const InformationThird = ({navigation}) => {
 
           <TouchableHighlight
             underlayColor=""
-            onPress={() => navigation.navigate('InformationFourth')}
+            onPress={() => nextStep()}
             style={{
               marginTop: 20,
               marginLeft: 20,
@@ -188,6 +207,7 @@ const InformationThird = ({navigation}) => {
                       setCheckMediaListening(!checkMediaListening),
                       setCheckBrandManagement(false),
                       setCheckSocailMediaMarketing(false);
+                      setWhereWeBroughtYou('social_media_listening');
                   }}>
                   {checkMediaListening ? (
                     <View
@@ -244,7 +264,7 @@ const InformationThird = ({navigation}) => {
 
           <TouchableHighlight
             underlayColor=""
-            onPress={() => navigation.navigate('InformationFourth')}
+            onPress={() => nextStep()}
             style={{
               marginTop: 20,
               marginLeft: 20,
@@ -267,6 +287,7 @@ const InformationThird = ({navigation}) => {
                       setCheckMediaListening(false),
                       setCheckBrandManagement(!checkBrandManagement),
                       setCheckSocailMediaMarketing(false);
+                      setWhereWeBroughtYou('brand_managment');
                   }}>
                   {checkBrandManagement ? (
                     <View
@@ -323,7 +344,7 @@ const InformationThird = ({navigation}) => {
 
           <TouchableHighlight
             underlayColor=""
-            onPress={() => navigation.navigate('InformationFourth')}
+            onPress={() => nextStep()}
             style={{
               marginTop: 20,
               marginLeft: 20,
@@ -346,6 +367,7 @@ const InformationThird = ({navigation}) => {
                       setCheckMediaListening(false),
                       setCheckBrandManagement(false),
                       setCheckSocailMediaMarketing(!checkSocailMediaMarketing);
+                      setWhereWeBroughtYou('social_media_marketing');
                   }}>
                   {checkSocailMediaMarketing ? (
                     <View

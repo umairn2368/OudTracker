@@ -14,6 +14,7 @@ import {
   StatusBar,
   ActivityIndicator,
 } from 'react-native';
+
 import {useDispatch} from 'react-redux';
 import IconSearch from 'react-native-vector-icons/AntDesign';
 import EyeIcon from 'react-native-vector-icons/Feather';
@@ -45,10 +46,10 @@ const Login = ({navigation}) => {
 
   const [signInCheck, setSignInCheck] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
-  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const [loading, setLoading] = useState(false);
   const [loadingFB, setLoadingFB] = useState(false);
   const [loadingGoogle, setLoadingGoogle] = useState(false);
 
@@ -60,56 +61,73 @@ const Login = ({navigation}) => {
     } else if (password == '') {
       alert('Please enter password');
     } else {
-       setLoading(true);
-      //   setTimeout(function () {
-      //     setLoading(false);
-      //     let user = {email: email, password: password};
-      //     dispatch({
-      //       type: types.ADD_USER,
-      //       user: user,
-      //     });
-      //   }, 2500);
-      // }
+      setLoading(true);
+      setLoadingFB(false);
+      setLoadingGoogle(false);
 
       let data = new FormData();
       data.append('email', email);
       data.append('password', password);
+      console.log({data});
+
       try {
         let res = await Api.post('/login', data);
         console.log('User login api response', res);
         dispatch({
           type: types.ADD_USER,
-          user: res,
+          user: res?.data?.data,
         });
         setLoading(false);
+        console.log('hi1');
       } catch (error) {
         setLoading(false);
         console.log(error);
+        console.log('hi2')
+        if (error?.message == 'Request failed with status code 403') {
+          alert('wrong credentials!');
+        }
       }
     }
   };
 
   const loginWithGoogle = async () => {
+    setLoading(false);
+    setLoadingFB(false);
     setLoadingGoogle(true);
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      setLoadingGoogle(false);
-      console.log(JSON.stringify(userInfo));
 
-      dispatch({
-        type: types.ADD_USER,
-        user: JSON.stringify(userInfo),
-      });
+      console.log(userInfo);
+      let data = new FormData();
+      data.append('email', userInfo?.user?.email);
+      data.append('social_id', userInfo?.user?.id);
+      data.append('name', userInfo?.user?.name);
+
+      try {
+        let res = await Api.post('/loginWithGoogle', data);
+        console.log('User google login api response', res);
+        dispatch({
+          type: types.ADD_USER,
+          user: res?.data?.data,
+        });
+
+        setLoadingGoogle(false);
+      } catch (error) {
+        setLoadingGoogle(false);
+        console.log(error);
+      }
     } catch (error) {
       setLoadingGoogle(false);
       console.log(error.message);
     }
   };
 
-  loginWithFacebook = () => {
+  const loginWithFacebook = () => {
     setLoadingFB(true);
-    // Attempt a login using the Facebook login dialog asking for default permissions.
+    setLoading(false);
+    setLoadingGoogle(false);
+
     LoginManager.logInWithPermissions(['public_profile']).then(
       login => {
         if (login.isCancelled) {
@@ -118,9 +136,8 @@ const Login = ({navigation}) => {
         } else {
           AccessToken.getCurrentAccessToken().then(data => {
             const accessToken = data.accessToken.toString();
-            this.getInfoFromToken(accessToken);
+            getInfoFromToken(accessToken);
           });
-          setLoadingFB(false);
         }
       },
       error => {
@@ -129,11 +146,11 @@ const Login = ({navigation}) => {
     );
   };
 
-  getInfoFromToken = token => {
+  const getInfoFromToken = token => {
     setLoadingFB(true);
     const PROFILE_REQUEST_PARAMS = {
       fields: {
-        string: 'id,name,first_name,last_name',
+        string: 'id,name,first_name,last_name,picture',
       },
     };
     const profileRequest = new GraphRequest(
@@ -144,18 +161,33 @@ const Login = ({navigation}) => {
           setLoadingFB(false);
           console.log('login info has error: ' + error);
         } else {
-          setLoadingFB(false);
           console.log('result:', user);
-          dispatch({
-            type: types.ADD_USER,
-            user: user,
-          });
+          loginWithFacebookAPI(user);
         }
       },
     );
     new GraphRequestManager().addRequest(profileRequest).start();
   };
 
+  const loginWithFacebookAPI = async user => {
+    setLoadingFB(true);
+    let data = new FormData();
+    data.append('social_id', user?.id);
+    data.append('name', user?.name);
+
+    try {
+      let res = await Api.post('/loginWithFacebook', data);
+      console.log('User facebook login api response', res);
+      dispatch({
+        type: types.ADD_USER,
+        user: res?.data?.data,
+      });
+      setLoadingFB(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
       <KeyboardAvoidingView
@@ -212,6 +244,7 @@ const Login = ({navigation}) => {
                 placeholderTextColor={colors.lightGrey}
                 onChangeText={val => setEmail(val)}
                 autoCapitalize="none"
+                keyboardType="email-address"
                 style={{
                   height: 44,
                   backgroundColor: colors.white,
@@ -250,6 +283,7 @@ const Login = ({navigation}) => {
                 placeholder="Enter your password"
                 placeholderTextColor={colors.lightGrey}
                 secureTextEntry={showPassword}
+                keyboardType="default"
                 onChangeText={val => setPassword(val)}
                 style={{
                   height: 44,
